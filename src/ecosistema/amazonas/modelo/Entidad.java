@@ -4,15 +4,12 @@
  */
 package ecosistema.amazonas.modelo;
 
-/**
- *
- * @author facu_
- */
 abstract class Entidad {
     private String nombre;
     private double energia;
     private int edad;
     private boolean viva;
+    
     
     //Getters
     public String getNombre(){ return nombre; }
@@ -71,7 +68,6 @@ abstract class Entidad {
             energia = 0;
         }
     }
-    
     
     // Recuerden setear en cada clase la cantidad de seres que debe haber, que como minimo debe haber 5 en plantas y tal
 }
