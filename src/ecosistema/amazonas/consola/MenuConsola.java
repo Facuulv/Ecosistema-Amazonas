@@ -105,6 +105,7 @@ public class MenuConsola {
         }
     }
 
+    // Sirve para cambiar el clima depende la confirmacion del usuario
     private void cambiarClimaDesdeMenu(Ecosistema eco) {
         Clima nuevoClima;
 
