@@ -185,6 +185,7 @@ public class MenuConsola {
         return Clima.SOLEADO;
     }
 
+    // Metodo que devuelve un entero, pidiendo minimo y maximo. Metodo para reutilizar
     private int pedirEntero(String mensaje, int minimo, int maximo) {
         int numero;
 
