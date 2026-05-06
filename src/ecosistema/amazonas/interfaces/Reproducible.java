@@ -9,5 +9,5 @@ package ecosistema.amazonas.interfaces;
  * @author facu_
  */
 public interface Reproducible {
-    
+    void reproducirse(ecosistema.amazonas.sistema.Ecosistema eco);
 }
