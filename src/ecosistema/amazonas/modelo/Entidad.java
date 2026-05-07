@@ -3,9 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package ecosistema.amazonas.modelo;
-
+import ecosistema.amazonas.sistema.Ecosistema;
 public abstract class Entidad {
-
     private String nombre;
     private double energia;
     private int edad;
