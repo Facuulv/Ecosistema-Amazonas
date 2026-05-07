@@ -72,12 +72,12 @@ public class MenuConsola {
         }
 
         eco.generarReporteFinal();
-        
+
         if (confirmar("¿Querés ver las estadísticas detalladas? SI - NO: ")) {
             eco.mostrarEstadisticas();
         }
     }
-    
+
     private void mostrarIntervencion(Ecosistema eco) {
         int opcion;
 
@@ -171,19 +171,16 @@ public class MenuConsola {
 
         switch (opcion) {
             case 1:
-                return Clima.SOLEADO;
-
+                return new Clima("Soleado");
             case 2:
-                return Clima.LLUVIOSO;
-
+                return new Clima("Lluvioso");
             case 3:
-                return Clima.SEQUIA;
-
+                return new Clima("Sequía");
             case 4:
-                return Clima.INVIERNO;
+                return new Clima("Invierno");
         }
 
-        return Clima.SOLEADO;
+        return new Clima("Soleado");
     }
 
     // Metodo que devuelve un entero, pidiendo minimo y maximo como parametros, y obviamente numero pedido. Metodo para reutilizar

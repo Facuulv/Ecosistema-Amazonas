@@ -1,8 +1,6 @@
 package ecosistema.amazonas;
 
-import ecosistema.amazonas.modelo.Lobo;
-import ecosistema.amazonas.sistema.Ecosistema;
-
+import ecosistema.amazonas.consola.MenuConsola;
 /**
  * Clase principal actualizada para el simulador de Ecosistema Amazonas.
  * Incluye lógica de turnos, simulación de clima y reporte final.
@@ -12,6 +10,7 @@ import ecosistema.amazonas.sistema.Ecosistema;
 public class EcosistemaAmazonas {
 
     public static void main(String[] args) {
+        /*
         // 1. Inicialización del Ecosistema
         Ecosistema selva = new Ecosistema();
 
@@ -36,5 +35,9 @@ public class EcosistemaAmazonas {
         // 4. Reporte Final
         // Muestra el resumen de sobrevivientes y muertes totales del sistema
         selva.generarReporteFinal();
+        */
+        MenuConsola menu = new MenuConsola();
+
+        menu.iniciar();
     }
 }

@@ -2,6 +2,17 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/facu_/OneDrive/Escritorio/Ecosistema-Amazonas/src/ecosistema/amazonas/consola/MenuConsola.java</file>
+            <file>file:/C:/Users/facu_/OneDrive/Escritorio/Ecosistema-Amazonas/nbproject/private/private.xml</file>
+            <file>file:/C:/Users/facu_/OneDrive/Escritorio/Ecosistema-Amazonas/nbproject/private/private.properties</file>
+            <file>file:/C:/Users/facu_/OneDrive/Escritorio/Ecosistema-Amazonas/src/ecosistema/amazonas/modelo/Animal.java</file>
+            <file>file:/C:/Users/facu_/OneDrive/Escritorio/Ecosistema-Amazonas/src/ecosistema/amazonas/modelo/Entidad.java</file>
+            <file>file:/C:/Users/facu_/OneDrive/Escritorio/Ecosistema-Amazonas/src/ecosistema/amazonas/interfaces/Mortal.java</file>
+            <file>file:/C:/Users/facu_/OneDrive/Escritorio/Ecosistema-Amazonas/src/ecosistema/amazonas/interfaces/Reproducible.java</file>
+            <file>file:/C:/Users/facu_/OneDrive/Escritorio/Ecosistema-Amazonas/src/ecosistema/amazonas/EcosistemaAmazonas.java</file>
+            <file>file:/C:/Users/facu_/OneDrive/Escritorio/Ecosistema-Amazonas/src/ecosistema/amazonas/sistema/Ecosistema.java</file>
+            <file>file:/C:/Users/facu_/OneDrive/Escritorio/Ecosistema-Amazonas/src/ecosistema/amazonas/sistema/Clima.java</file>
+        </group>
     </open-files>
 </project-private>
