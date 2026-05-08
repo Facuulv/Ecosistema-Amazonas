@@ -11,14 +11,14 @@ package ecosistema.amazonas.interfaces;
  */
 public interface Mortal {
     
-    boolean viva();
+    boolean estaVivo();
     void morir();
     double getEnergia();
 
     default void verificarMuerte() {
         if (getEnergia() <= 0) {
             morir();
-            System.out.println(nombre + " no tiene más energía, y ha fallecido...");
+            System.out.println("Una entidad ha muerto.");
         }
     }
 }

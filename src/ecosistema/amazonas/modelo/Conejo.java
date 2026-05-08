@@ -11,44 +11,82 @@ package ecosistema.amazonas.modelo;
 import ecosistema.amazonas.sistema.Ecosistema;
 import ecosistema.amazonas.interfaces.Reproducible;
 
-public class Conejo extends Animal implements Reproducible{
-    public Conejo (String nombre, double energia, int edad, int velocidad, double peso){
-        super(nombre, energia, edad, velocidad, peso);
+public class Conejo extends Animal implements Reproducible {
+
+    public Conejo(String nombre, double energia, int edad, int velocidad, double peso) {
+        super(nombre, edad, energia, true, velocidad, peso);
     }
-   @Override
+
+    @Override
     public void comer(Ecosistema eco) {
         Planta comida = eco.buscarPlantaDisponible();
         if (comida != null) {
             double energiaGanada = comida.serComida();
-           setEnergia(getEnergia() + energiaGanada);
-            System.out.println(getNombre() + " comió una planta (+"+ energiaGanada +" energía)");
+            setEnergia(getEnergia() + energiaGanada);
+            System.out.println(getNombre() + " comió una planta (+" + energiaGanada + " energía)");
         } else {
-            setEnergia(getEnergia() - 15); // Pérdida exacta por consigna 
+            setEnergia(getEnergia() - 15);
+            System.out.println(getNombre() + " no encontró comida (-15 energía)");
         }
     }
+
     @Override
     public void actuar(Ecosistema eco) {
+
         if (estaVivo()) {
-            comer(eco); 
+
+            comer(eco);
+
+            if (eco.esClima("Soleado")) {
+                setEnergia(getEnergia() + 5);
+            } else if (eco.esClima("Lluvioso")) {
+                setEnergia(getEnergia() + 3);
+            } else if (eco.esClima("Sequía")) {
+                setEnergia(getEnergia() - 5);
+            } else if (eco.esClima("Invierno")) {
+                setEnergia(getEnergia() - 8);
+            }
+
             envejecer();
-            reproducirse(eco); 
+
+            intentarReproduccion(eco);
         }
     }
+
+    @Override
+    public boolean puedeReproducirse() {
+
+        return getEnergia() > 100;
+    }
+
     @Override
     public void mostrarEstado() {
         System.out.print("[Conejo] " + getNombre() + " | Energía: " + getEnergia());
         if (getEnergia() < 20) {
-            System.out.print(" ¡EN PELIGRO!"); 
+            System.out.print(" ¡EN PELIGRO!");
         }
         System.out.println();
     }
-    
+
     @Override
     public void reproducirse(Ecosistema eco) {
-        // Requisito: Energía > 60 [cite: 89]
-        if (getEnergia() > 60) {
-            eco.agregarEntidad(new Conejo("Cría de " + getNombre(), 30, 0, 10, 1.5));
-            setEnergia(getEnergia() - 30);
+
+        if (puedeReproducirse() && eco.getCantidadConejosVivos() >= 2) {
+
+            int velocidad = (int) (Math.random() * 11) + 5;
+            double peso = 1 + Math.random() * 4;
+
+            eco.agregarEntidad(new Conejo("Cría de " + getNombre(), 30, 0, velocidad, peso));
+            
+            int costoEnergia = 60;
+
+            if (eco.esClima("Sequía") || eco.esClima("Invierno")) {
+                costoEnergia = 80;
+            }
+
+            setEnergia(getEnergia() - costoEnergia);
+
+            System.out.println(getNombre() + " se reprodujo.");
         }
     }
 }

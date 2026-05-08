@@ -4,6 +4,7 @@
  */
 package ecosistema.amazonas.interfaces;
 
+import ecosistema.amazonas.sistema.Ecosistema;
 /**
  *
  * @author facu_
@@ -11,13 +12,13 @@ package ecosistema.amazonas.interfaces;
 public interface Reproducible {
     void reproducirse(Ecosistema eco);
 
-    boolean puedeReproducirse(Ecosistema eco);
+    boolean puedeReproducirse();
 
     /**
      * Método default que centraliza la lógica de reproducción.
      */
     default void intentarReproduccion(Ecosistema eco) {
-        if (puedeReproducirse(eco)) {
+        if (puedeReproducirse()) {
             reproducirse(eco);
         }
     }

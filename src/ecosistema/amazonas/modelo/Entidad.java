@@ -3,8 +3,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package ecosistema.amazonas.modelo;
+
 import ecosistema.amazonas.sistema.Ecosistema;
+
 public abstract class Entidad {
+
     private String nombre;
     private double energia;
     private int edad;
@@ -34,14 +37,6 @@ public abstract class Entidad {
         setearViva(viva);
     }
 
-    public void verificarEstadoVital() {
-        verificarMuerte(this.energia);
-    }
-
-    public void procesarTurno() {
-        avanzarTurno();
-    }
-
     public void setearNombre(String nombre) {
         if (nombre != null && !nombre.isEmpty()) {
             this.nombre = nombre;
@@ -56,12 +51,29 @@ public abstract class Entidad {
     }
 
     public void setearEnergia(double energia) {
-        if (energia > 0) {
+        if (energia >= 0) {
             this.energia = energia;
         } else {
+            this.energia = 0;
             System.out.println("Error, la energia no puede ser nula ni ser menor o igual a cero.");
         }
-        verificarMuerte();
+
+        if (this.energia <= 0) {
+            this.viva = false;
+        }
+    }
+
+    public boolean estaVivo() {
+        return viva;
+    }
+
+    public void morir() {
+        this.viva = false;
+        this.energia = 0;
+    }
+
+    public void setEnergia(double energia) {
+        setearEnergia(energia);
     }
 
     public void setearViva(boolean viva) {
@@ -69,8 +81,6 @@ public abstract class Entidad {
     }
 
     public abstract void actuar(Ecosistema eco);
-
-    public abstract void comer(Ecosistema eco);
 
     public abstract void mostrarEstado();
 
