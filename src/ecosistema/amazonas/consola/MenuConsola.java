@@ -70,8 +70,9 @@ public class MenuConsola {
         } else {
             System.out.println("La simulación terminó porque se alcanzó la cantidad de turnos indicada.");
         }
-
-        eco.generarReporteFinal();
+        
+        //Lo hacemos abajo al reporte final, tipo que el usuario ponga si quiere ver el reporte o no
+        //eco.generarReporteFinal();
 
         if (confirmar("¿Querés ver las estadísticas detalladas? SI - NO: ")) {
             eco.mostrarEstadisticas();
