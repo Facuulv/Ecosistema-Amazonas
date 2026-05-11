@@ -41,6 +41,10 @@ public class Planta extends Entidad implements Reproducible {
     @Override
     public void reproducirse(Ecosistema eco) {
 
+        if (eco.getCantidadPlantas() >= 40) {
+            return;
+        }
+
         int cantidadNuevas = 1;
 
         if (eco.esClima("Soleado")) {
@@ -57,14 +61,11 @@ public class Planta extends Entidad implements Reproducible {
 
             int tamanioNuevo = (int) (Math.random() * 5) + 1;
 
-            eco.agregarEntidad(
-                    new Planta(
-                            "Brote de " + getNombre(),
-                            20,
-                            0,
-                            tamanioNuevo
-                    )
-            );
+            Planta nuevaPlanta = new Planta("Brote de " + getNombre(), 20, 0, tamanioNuevo);
+
+            eco.agregarEntidad(nuevaPlanta);
+
+            System.out.println(getNombre() + " se reprodujo y nació " + nuevaPlanta.getNombre());
         }
 
         setEnergia(getEnergia() - 20);

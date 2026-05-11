@@ -50,13 +50,14 @@ public class Conejo extends Animal implements Reproducible {
             envejecer();
 
             intentarReproduccion(eco);
+            verificarMuerte();
         }
     }
 
     @Override
     public boolean puedeReproducirse() {
 
-        return getEnergia() > 100;
+        return getEnergia() > 120;
     }
 
     @Override
@@ -71,17 +72,17 @@ public class Conejo extends Animal implements Reproducible {
     @Override
     public void reproducirse(Ecosistema eco) {
 
-        if (puedeReproducirse() && eco.getCantidadConejosVivos() >= 2) {
+        if (puedeReproducirse() && eco.getCantidadConejosVivos() >= 2 && eco.getCantidadPlantas() >= 15) {
 
             int velocidad = (int) (Math.random() * 11) + 5;
             double peso = 1 + Math.random() * 4;
 
             eco.agregarEntidad(new Conejo("Cría de " + getNombre(), 30, 0, velocidad, peso));
             
-            int costoEnergia = 60;
+            int costoEnergia = 50;
 
             if (eco.esClima("Sequía") || eco.esClima("Invierno")) {
-                costoEnergia = 80;
+                costoEnergia = 70;
             }
 
             setEnergia(getEnergia() - costoEnergia);

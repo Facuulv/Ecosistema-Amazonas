@@ -5,12 +5,13 @@
 package ecosistema.amazonas.modelo;
 
 import ecosistema.amazonas.sistema.Ecosistema;
+import ecosistema.amazonas.interfaces.Mortal;
 
 /**
  *
  * @author 54351
  */
-abstract class Animal extends Entidad {
+abstract class Animal extends Entidad implements Mortal{
 
     private int velocidad;
     private double peso;

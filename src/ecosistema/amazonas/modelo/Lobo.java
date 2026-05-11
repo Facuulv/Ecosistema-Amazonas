@@ -35,6 +35,8 @@ public class Lobo extends Animal {
         }
 
         envejecer();
+        
+        verificarMuerte();
     }
 
     @Override
@@ -48,7 +50,7 @@ public class Lobo extends Animal {
 
         if (presa != null) {
 
-            double probabilidad = getEnergia() / 180.0;
+            double probabilidad = getEnergia() / 120.0;
 
             if (eco.esClima("Invierno")) {
                 probabilidad = probabilidad + 0.20;
