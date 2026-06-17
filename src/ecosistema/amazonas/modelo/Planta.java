@@ -12,7 +12,7 @@ public class Planta extends Entidad {
     public int getTamanio() {
         return tamanio;
     }
-
+    //Determina el tamaño de la planta 
     public void setTamanio(int tamanio) {
         if (tamanio >= 1 && tamanio <= 5) {
             this.tamanio = tamanio;
@@ -23,7 +23,7 @@ public class Planta extends Entidad {
         }
     }
 
-    // Alias para mantener compatibilidad con nombres anteriores
+    
     public void setearTamanio(int tamanio) {
         setTamanio(tamanio);
     }

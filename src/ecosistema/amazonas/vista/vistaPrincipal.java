@@ -172,9 +172,12 @@ public class vistaPrincipal extends javax.swing.JFrame {
 
         PanelCentral.setLayout(new java.awt.CardLayout());
 
+        PanelBienvenida.setBackground(new java.awt.Color(204, 255, 255));
+
         lblTituloBienvenida.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         lblTituloBienvenida.setText("¡BIENVENIDOS AL HIMALAYA!");
 
+        btnEmpezar.setBackground(new java.awt.Color(153, 255, 153));
         btnEmpezar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnEmpezar.setText("EMPEZAR");
         btnEmpezar.addActionListener(this::btnEmpezarActionPerformed);
@@ -205,6 +208,8 @@ public class vistaPrincipal extends javax.swing.JFrame {
 
         PanelCentral.add(PanelBienvenida, "bienvenida");
 
+        PanelConfiguracion.setBackground(new java.awt.Color(204, 255, 255));
+
         lblTituloConfiguracion.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         lblTituloConfiguracion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTituloConfiguracion.setText("CONFIGURACIÓN INICIAL");
@@ -221,10 +226,12 @@ public class vistaPrincipal extends javax.swing.JFrame {
 
         lblTurnosConfig.setText("Turnos totales:");
 
+        btnIniciarSimulacion.setBackground(new java.awt.Color(153, 255, 153));
         btnIniciarSimulacion.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnIniciarSimulacion.setText("Iniciar simulación");
         btnIniciarSimulacion.addActionListener(this::btnIniciarSimulacionActionPerformed);
 
+        btnVolverBienvenida.setBackground(new java.awt.Color(102, 204, 255));
         btnVolverBienvenida.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnVolverBienvenida.setText("Volver");
         btnVolverBienvenida.addActionListener(this::btnVolverBienvenidaActionPerformed);
@@ -238,9 +245,11 @@ public class vistaPrincipal extends javax.swing.JFrame {
                 .addGroup(PanelConfiguracionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelConfiguracionLayout.createSequentialGroup()
                         .addGroup(PanelConfiguracionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblClimaConfig)
-                            .addComponent(lblTurnosConfig))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(PanelConfiguracionLayout.createSequentialGroup()
+                                .addComponent(lblClimaConfig)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(lblTurnosConfig, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(205, 205, 205)
                         .addGroup(PanelConfiguracionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(cbClima, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(spTurnos)))

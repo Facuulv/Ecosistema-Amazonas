@@ -12,7 +12,8 @@ public enum Clima {
     private final int energiaExtraConejo;
     private final int energiaExtraLobo;
     private final double bonusCazaLobo;
-
+    
+    //Constructor
     private Clima(String nombreVisible, double multiplicadorReproduccionPlantas, int energiaExtraConejo, int energiaExtraLobo, double bonusCazaLobo) {
         this.nombreVisible = nombreVisible;
         this.multiplicadorReproduccionPlantas = multiplicadorReproduccionPlantas;

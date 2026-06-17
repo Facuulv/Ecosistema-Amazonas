@@ -35,7 +35,7 @@ public abstract class Animal extends Entidad {
         }
     }
 
-    // Métodos alias para mantener compatibilidad con nombres anteriores
+   
     public void setearVelocidad(int velocidad) {
         setVelocidad(velocidad);
     }
