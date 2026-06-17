@@ -1,0 +1,101 @@
+========================================
+SIMULACIÓN GUARDADA - ECOSISTEMA AMAZONAS
+========================================
+
+[CONFIGURACION]
+TURNO=4
+TURNOS_TOTALES=10
+CLIMA=LLUVIOSO
+FINALIZADA=true
+CAUSA_FINALIZACION=Colapso del ecosistema: se extinguieron los conejos.
+
+[RESUMEN_ESTADISTICO]
+NAC_PLANTAS=16
+NAC_CONEJOS=1
+MUE_PLANTAS=6
+MUE_CONEJOS=3
+MUE_LOBOS=0
+TURNO_MAYOR_ACTIVIDAD=1
+EVENTOS_MAYOR_ACTIVIDAD=11
+
+[RESULTADO_FINAL]
+PLANTAS_FINALES=15
+CONEJOS_FINALES=0
+LOBOS_FINALES=1
+
+[PLANTAS]
+Planta-1;0;0.0;false;2;3;4
+Planta-2;4;19.5;true;9;8;2
+Planta-3;4;17.3;true;9;5;2
+Planta-4;1;0.0;false;8;8;4
+Planta-5;4;16.9;true;8;6;3
+Planta-6;4;29.1;true;8;4;5
+Planta-7;0;0.0;false;1;7;3
+Planta-8;2;0.0;false;0;3;5
+Planta-9;4;19.6;true;6;3;5
+Planta-10;2;0.0;false;6;8;3
+Planta-11;3;20.5;true;0;8;2
+Planta-12;0;0.0;false;0;0;2
+Planta-13;2;38.8;true;2;8;5
+Planta-14;2;38.0;true;9;7;1
+Planta-15;2;39.6;true;8;2;1
+Planta-16;2;31.5;true;3;1;2
+Planta-17;1;57.2;true;1;7;3
+Planta-18;1;57.4;true;4;7;1
+Planta-19;1;56.7;true;5;4;2
+Planta-20;1;39.8;true;0;2;4
+Planta-21;1;35.4;true;3;8;2
+[CONEJOS]
+Conejo-1;0;0.0;false;7;8;9;2.0
+Conejo-2;3;0.0;false;6;2;5;2.1
+Conejo-3;1;0.0;false;0;1;5;2.0
+[LOBOS]
+Lobo-1;4;185.1;true;6;5;10;41.0;3
+[EVENTOS_TOTALES]
+Turno 0: Simulación iniciada con clima Soleado.
+Turno 1: === Turno 1 ===
+Turno 1: Planta-1 se reprodujo. Nació Planta-6.
+Turno 1: Planta-2 se reprodujo. Nació Planta-7.
+Turno 1: Planta-3 se reprodujo. Nació Planta-8.
+Turno 1: Planta-5 se reprodujo. Nació Planta-9.
+Turno 1: Conejo-1 comió Planta-7 y ganó 30.0 de energía.
+Turno 1: Conejo-1 recibió efecto de clima sobre energía: 5.
+Turno 1: Conejo-2 comió Planta-1 y ganó 40.0 de energía.
+Turno 1: Conejo-2 recibió efecto de clima sobre energía: 5.
+Turno 1: Conejo-1 se reprodujo. Nació Conejo-3.
+Turno 1: Lobo-1 cazó a Conejo-1. Cacerías: 1.
+Turno 2: === Turno 2 ===
+Turno 2: Planta-2 se reprodujo. Nació Planta-10.
+Turno 2: Planta-3 se reprodujo. Nació Planta-11.
+Turno 2: Planta-8 se reprodujo. Nació Planta-12.
+Turno 2: Conejo-2 comió Planta-12 y ganó 20.0 de energía.
+Turno 2: Conejo-2 recibió efecto de clima sobre energía: 5.
+Turno 2: Conejo-3 comió Planta-4 y ganó 40.0 de energía.
+Turno 2: Conejo-3 recibió efecto de clima sobre energía: 5.
+Turno 2: Lobo-1 cazó a Conejo-3. Cacerías: 2.
+Turno 3: === Turno 3 ===
+Turno 3: Planta-6 se reprodujo. Nació Planta-13.
+Turno 3: Planta-9 se reprodujo. Nació Planta-14.
+Turno 3: Planta-10 se reprodujo. Nació Planta-15.
+Turno 3: Planta-11 se reprodujo. Nació Planta-16.
+Turno 3: Conejo-2 comió Planta-8 y ganó 50.0 de energía.
+Turno 3: Conejo-2 recibió efecto de clima sobre energía: 5.
+Turno 3: Lobo-1 falló la caza y perdió 10 de energía.
+Turno 3: El clima cambió a Lluvioso.
+Turno 4: === Turno 4 ===
+Turno 4: Planta-6 se reprodujo. Nació Planta-17.
+Turno 4: Planta-13 se reprodujo. Nació Planta-18.
+Turno 4: Planta-14 se reprodujo. Nació Planta-19.
+Turno 4: Planta-15 se reprodujo. Nació Planta-20.
+Turno 4: Planta-16 se reprodujo. Nació Planta-21.
+Turno 4: Conejo-2 comió Planta-10 y ganó 30.0 de energía.
+Turno 4: Conejo-2 recibió efecto de clima sobre energía: 3.
+Turno 4: Lobo-1 cazó a Conejo-2. Cacerías: 3.
+Turno 4: Lobo-1 recibió efecto de clima sobre energía: -5.
+Turno 4: Colapso del ecosistema: se extinguieron los conejos.
+[HISTORIAL_PLANTAS]
+5,7,8,11,15
+[HISTORIAL_CONEJOS]
+2,2,1,1,0
+[HISTORIAL_LOBOS]
+1,1,1,1,1

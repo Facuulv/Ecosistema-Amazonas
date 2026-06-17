@@ -1,17 +1,21 @@
 package ecosistema.amazonas;
 
-import ecosistema.amazonas.consola.MenuConsola;
-/**
- * Clase principal actualizada para el simulador de Ecosistema Amazonas.
- * Incluye lógica de turnos, simulación de clima y reporte final.
- * 
- * @author facu_
- */
+import ecosistema.amazonas.controlador.ControladorEcosistema;
+import ecosistema.amazonas.vista.vistaPrincipal;
+
 public class EcosistemaAmazonas {
 
     public static void main(String[] args) {
-        MenuConsola menu = new MenuConsola();
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                vistaPrincipal vista = new vistaPrincipal();
+                ControladorEcosistema controlador = new ControladorEcosistema();
 
-        menu.iniciar();
+                vista.setControlador(controlador);
+                vista.setLocationRelativeTo(null);
+                vista.setVisible(true);
+            }
+        });
     }
 }

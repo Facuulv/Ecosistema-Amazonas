@@ -1,10 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package ecosistema.amazonas.modelo;
-
-import ecosistema.amazonas.sistema.Ecosistema;
 
 public abstract class Entidad {
 
@@ -12,86 +6,108 @@ public abstract class Entidad {
     private double energia;
     private int edad;
     private boolean viva;
+    private int fila;
+    private int columna;
 
-    //Getters
-    public String getNombre() {
-        return nombre;
+    public Entidad(String nombre, int edad, double energia, boolean viva, int fila, int columna) {
+        setNombre(nombre);
+        setEdad(edad);
+        setEnergia(energia);
+        setViva(viva);
+        setFila(fila);
+        setColumna(columna);
     }
 
-    public int getEdad() {
-        return edad;
+    public String getNombre() {
+        return nombre;
     }
 
     public double getEnergia() {
         return energia;
     }
 
+    public int getEdad() {
+        return edad;
+    }
+
+    public boolean isViva() {
+        return viva;
+    }
+
     public boolean getViva() {
         return viva;
     }
 
-    public Entidad(String nombre, int edad, double energia, boolean viva) {
-        setearNombre(nombre);
-        setearEdad(edad);
-        setearEnergia(energia);
-        setearViva(viva);
+    public int getFila() {
+        return fila;
     }
 
-    public void setearNombre(String nombre) {
-        if (nombre != null && !nombre.isEmpty()) {
-            this.nombre = nombre;
+    public int getColumna() {
+        return columna;
+    }
+
+    public void setNombre(String nombre) {
+        if (nombre != null && !nombre.trim().isEmpty()) {
+            this.nombre = nombre.trim();
         } else {
-            System.out.println("Error, el nombre no puede estar vacío.");
+            this.nombre = "Entidad";
         }
-    }
-
-    public void setearEdad(int edad) {
-        this.edad = edad;
-        // Hay que poner verificaciones de edad en cada clase segun el animal o la planta
-    }
-
-    public void setearEnergia(double energia) {
-        if (energia >= 0) {
-            this.energia = energia;
-        } else {
-            this.energia = 0;
-            System.out.println("Error, la energia no puede ser nula ni ser menor o igual a cero.");
-        }
-
-        if (this.energia <= 0) {
-            this.viva = false;
-        }
-    }
-
-    public boolean estaVivo() {
-        return viva;
-    }
-
-    public void morir() {
-        this.viva = false;
-        this.energia = 0;
     }
 
     public void setEnergia(double energia) {
-        setearEnergia(energia);
-    }
-
-    public void setearViva(boolean viva) {
-        this.viva = viva;
-    }
-
-    public abstract void actuar(Ecosistema eco);
-
-    public abstract void mostrarEstado();
-
-    protected void envejecer() {
-        edad++;
-        energia -= 2;
-
         if (energia < 0) {
-            energia = 0;
+            this.energia = 0;
+        } else {
+            this.energia = energia;
         }
     }
 
-    // Recuerden setear en cada clase la cantidad de seres que debe haber, que como minimo debe haber 5 en plantas y tal
+    public void setEdad(int edad) {
+        if (edad >= 0) {
+            this.edad = edad;
+        } else {
+            this.edad = 0;
+        }
+    }
+
+    public void setViva(boolean viva) {
+        this.viva = viva;
+
+        if (!viva) {
+            this.energia = 0;
+        }
+    }
+
+    public void setFila(int fila) {
+        if (fila >= 0) {
+            this.fila = fila;
+        } else {
+            this.fila = 0;
+        }
+    }
+
+    public void setColumna(int columna) {
+        if (columna >= 0) {
+            this.columna = columna;
+        } else {
+            this.columna = 0;
+        }
+    }
+
+    // Métodos alias para no romper código viejo del TP1 mientras refactorizamos
+    public void setearNombre(String nombre) {
+        setNombre(nombre);
+    }
+
+    public void setearEnergia(double energia) {
+        setEnergia(energia);
+    }
+
+    public void setearEdad(int edad) {
+        setEdad(edad);
+    }
+
+    public void setearViva(boolean viva) {
+        setViva(viva);
+    }
 }

@@ -1,0 +1,68 @@
+========================================
+Fecha: 09/06/2026 18:28
+Turnos: 3 / 10
+Clima final: Soleado
+Causa: Colapso del ecosistema: se extinguieron los conejos.
+Plantas vivas: 10
+Conejos vivos: 0
+Lobos vivos: 1
+Nacimientos plantas: 10
+Nacimientos conejos: 1
+Muertes plantas: 5
+Muertes conejos: 3
+Muertes lobos: 0
+Turno de mayor actividad: 1
+Cantidad de eventos en ese turno: 10
+========================================
+
+========================================
+Fecha: 09/06/2026 18:55
+Turnos: 2 / 10
+Clima final: Soleado
+Causa: Colapso del ecosistema: se extinguieron los conejos.
+Plantas vivas: 10
+Conejos vivos: 0
+Lobos vivos: 1
+Nacimientos plantas: 8
+Nacimientos conejos: 0
+Muertes plantas: 3
+Muertes conejos: 2
+Muertes lobos: 0
+Turno de mayor actividad: 1
+Cantidad de eventos en ese turno: 10
+========================================
+
+========================================
+Fecha: 09/06/2026 18:57
+Turnos: 6 / 10
+Clima final: Invierno
+Causa: Colapso del ecosistema: se extinguieron las plantas.
+Plantas vivas: 0
+Conejos vivos: 21
+Lobos vivos: 1
+Nacimientos plantas: 33
+Nacimientos conejos: 22
+Muertes plantas: 41
+Muertes conejos: 4
+Muertes lobos: 0
+Turno de mayor actividad: 6
+Cantidad de eventos en ese turno: 41
+========================================
+
+========================================
+Fecha: 17/06/2026 17:46
+Turnos: 4 / 10
+Clima final: Lluvioso
+Causa: Colapso del ecosistema: se extinguieron los conejos.
+Plantas vivas: 15
+Conejos vivos: 0
+Lobos vivos: 1
+Nacimientos plantas: 16
+Nacimientos conejos: 1
+Muertes plantas: 6
+Muertes conejos: 3
+Muertes lobos: 0
+Turno de mayor actividad: 1
+Cantidad de eventos en ese turno: 11
+========================================
+

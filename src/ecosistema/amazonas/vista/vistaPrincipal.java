@@ -4,19 +4,40 @@
  */
 package ecosistema.amazonas.vista;
 
+import ecosistema.amazonas.controlador.ControladorEcosistema;
+import ecosistema.amazonas.modelo.Clima;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.DefaultListModel;
+import java.awt.CardLayout;
+import java.awt.Color;
+import java.awt.Component;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableCellRenderer;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+
 /**
  *
  * @author Alumno
  */
 public class vistaPrincipal extends javax.swing.JFrame {
-    
+
+    private ControladorEcosistema controlador;
+
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(vistaPrincipal.class.getName());
 
     /**
      * Creates new form vistaPrincipal
      */
+    public void setControlador(ControladorEcosistema controlador) {
+        this.controlador = controlador;
+    }
+
     public vistaPrincipal() {
         initComponents();
+        configurarVistaInicial();
+        configurarCierreVentana();
     }
 
     /**
@@ -29,47 +50,93 @@ public class vistaPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         PanelLateral = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        btnAvanzarTurno = new javax.swing.JButton();
+        btnIntervencion = new javax.swing.JButton();
+        btnAgregarEntidad = new javax.swing.JButton();
+        btnNuevaSimulacion = new javax.swing.JButton();
+        btnGuardar = new javax.swing.JButton();
         PanelCentral = new javax.swing.JPanel();
         PanelBienvenida = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        lblTituloBienvenida = new javax.swing.JLabel();
         btnEmpezar = new javax.swing.JButton();
-        PanelCarga = new javax.swing.JPanel();
+        PanelConfiguracion = new javax.swing.JPanel();
+        lblTituloConfiguracion = new javax.swing.JLabel();
+        lblPlantasConfig = new javax.swing.JLabel();
+        spPlantas = new javax.swing.JSpinner();
+        lblConejosConfig = new javax.swing.JLabel();
+        spConejos = new javax.swing.JSpinner();
+        lblLobosConfig = new javax.swing.JLabel();
+        spLobos = new javax.swing.JSpinner();
+        lblClimaConfig = new javax.swing.JLabel();
+        cbClima = new javax.swing.JComboBox<>();
+        lblTurnosConfig = new javax.swing.JLabel();
+        spTurnos = new javax.swing.JSpinner();
+        btnIniciarSimulacion = new javax.swing.JButton();
+        btnVolverBienvenida = new javax.swing.JButton();
         PanelJuego = new javax.swing.JPanel();
+        PanelEstado = new javax.swing.JPanel();
+        lblTurno = new javax.swing.JLabel();
+        jSeparator4 = new javax.swing.JSeparator();
+        lblClima = new javax.swing.JLabel();
+        jSeparator5 = new javax.swing.JSeparator();
+        lblPlantas = new javax.swing.JLabel();
+        jSeparator3 = new javax.swing.JSeparator();
+        lblConejos = new javax.swing.JLabel();
+        jSeparator2 = new javax.swing.JSeparator();
+        lblLobos = new javax.swing.JLabel();
+        PanelEcosistema = new javax.swing.JPanel();
+        PanelGrilla = new javax.swing.JPanel();
+        lblTituloGrilla = new javax.swing.JLabel();
+        PanelContenedorGrilla = new javax.swing.JPanel();
+        scrollGrilla = new javax.swing.JScrollPane();
+        tablaGrilla = new javax.swing.JTable();
+        PanelTablaEntidades = new javax.swing.JPanel();
+        lblTituloEntidades = new javax.swing.JLabel();
+        scrollTablaEntidades = new javax.swing.JScrollPane();
+        tablaEntidades = new javax.swing.JTable();
         PanelInformacion = new javax.swing.JPanel();
         scrollPaneInformacion = new javax.swing.JScrollPane();
-        lstInformacion = new javax.swing.JList<>();
-        PanelEcosistema = new javax.swing.JPanel();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
-        jMenu4 = new javax.swing.JMenu();
-        jMenuItem5 = new javax.swing.JMenuItem();
-        jMenuItem6 = new javax.swing.JMenuItem();
+        listaEventos = new javax.swing.JList<>();
+        PanelReporte = new javax.swing.JPanel();
+        JMenuBar = new javax.swing.JMenuBar();
+        menuInicio = new javax.swing.JMenu();
+        itemNuevaSimulacion = new javax.swing.JMenuItem();
+        itemVolverBienvenida = new javax.swing.JMenuItem();
+        jSeparator6 = new javax.swing.JPopupMenu.Separator();
+        itemSalir = new javax.swing.JMenuItem();
+        menuJuego = new javax.swing.JMenu();
+        itemAvanzarTurno = new javax.swing.JMenuItem();
+        itemIntervencion = new javax.swing.JMenuItem();
+        itemAgregarEntidad = new javax.swing.JMenuItem();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
-        jMenuItem7 = new javax.swing.JMenuItem();
-        jMenu3 = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
+        itemGuardarSimulacion = new javax.swing.JMenuItem();
+        itemCargarSimulacion = new javax.swing.JMenuItem();
+        jSeparator7 = new javax.swing.JPopupMenu.Separator();
+        itemEstadoActual = new javax.swing.JMenuItem();
+        menuHistorial = new javax.swing.JMenu();
+        itemReporteFinal = new javax.swing.JMenuItem();
+        itemEventosCompletos = new javax.swing.JMenuItem();
+        itemHistorialPartidas = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setSize(new java.awt.Dimension(800, 600));
 
-        jButton1.setText("Turno");
+        PanelLateral.setBackground(new java.awt.Color(204, 204, 204));
 
-        jButton2.setText("Intervención");
+        btnAvanzarTurno.setText("Avanzar turno");
+        btnAvanzarTurno.addActionListener(this::btnAvanzarTurnoActionPerformed);
 
-        jButton3.setText("Agregar");
+        btnIntervencion.setText("Intervención");
+        btnIntervencion.addActionListener(this::btnIntervencionActionPerformed);
 
-        jButton4.setText("Eliminar");
+        btnAgregarEntidad.setText("Agregar entidad");
+        btnAgregarEntidad.addActionListener(this::btnAgregarEntidadActionPerformed);
 
-        jButton5.setText("Guardar");
+        btnNuevaSimulacion.setText("Nueva Simulación");
+        btnNuevaSimulacion.addActionListener(this::btnNuevaSimulacionActionPerformed);
+
+        btnGuardar.setText("Guardar");
+        btnGuardar.addActionListener(this::btnGuardarActionPerformed);
 
         javax.swing.GroupLayout PanelLateralLayout = new javax.swing.GroupLayout(PanelLateral);
         PanelLateral.setLayout(PanelLateralLayout);
@@ -78,159 +145,799 @@ public class vistaPrincipal extends javax.swing.JFrame {
             .addGroup(PanelLateralLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(PanelLateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnAvanzarTurno, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnIntervencion, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnNuevaSimulacion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnGuardar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnAgregarEntidad, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         PanelLateralLayout.setVerticalGroup(
             PanelLateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelLateralLayout.createSequentialGroup()
                 .addGap(32, 32, 32)
-                .addComponent(jButton1)
+                .addComponent(btnAvanzarTurno)
                 .addGap(18, 18, 18)
-                .addComponent(jButton2)
+                .addComponent(btnIntervencion)
                 .addGap(18, 18, 18)
-                .addComponent(jButton3)
-                .addGap(18, 18, 18)
-                .addComponent(jButton4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
-                .addComponent(jButton5)
-                .addContainerGap())
+                .addComponent(btnAgregarEntidad)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 347, Short.MAX_VALUE)
+                .addComponent(btnNuevaSimulacion)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnGuardar)
+                .addGap(17, 17, 17))
         );
 
         getContentPane().add(PanelLateral, java.awt.BorderLayout.LINE_START);
 
         PanelCentral.setLayout(new java.awt.CardLayout());
 
-        jLabel1.setText("¡BIENVENIDOS AL HIMALAYA!");
+        lblTituloBienvenida.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        lblTituloBienvenida.setText("¡BIENVENIDOS AL HIMALAYA!");
 
+        btnEmpezar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnEmpezar.setText("EMPEZAR");
+        btnEmpezar.addActionListener(this::btnEmpezarActionPerformed);
 
         javax.swing.GroupLayout PanelBienvenidaLayout = new javax.swing.GroupLayout(PanelBienvenida);
         PanelBienvenida.setLayout(PanelBienvenidaLayout);
         PanelBienvenidaLayout.setHorizontalGroup(
             PanelBienvenidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelBienvenidaLayout.createSequentialGroup()
+                .addContainerGap(48, Short.MAX_VALUE)
                 .addGroup(PanelBienvenidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(PanelBienvenidaLayout.createSequentialGroup()
-                        .addGap(74, 74, 74)
-                        .addComponent(jLabel1))
-                    .addGroup(PanelBienvenidaLayout.createSequentialGroup()
-                        .addGap(109, 109, 109)
-                        .addComponent(btnEmpezar, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(74, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelBienvenidaLayout.createSequentialGroup()
+                        .addComponent(lblTituloBienvenida)
+                        .addGap(91, 91, 91))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelBienvenidaLayout.createSequentialGroup()
+                        .addComponent(btnEmpezar, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(223, 223, 223))))
         );
         PanelBienvenidaLayout.setVerticalGroup(
             PanelBienvenidaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelBienvenidaLayout.createSequentialGroup()
-                .addGap(101, 101, 101)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(btnEmpezar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(101, Short.MAX_VALUE))
+                .addGap(203, 203, 203)
+                .addComponent(lblTituloBienvenida)
+                .addGap(41, 41, 41)
+                .addComponent(btnEmpezar, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(208, Short.MAX_VALUE))
         );
 
-        PanelCentral.add(PanelBienvenida, "card4");
+        PanelCentral.add(PanelBienvenida, "bienvenida");
 
-        javax.swing.GroupLayout PanelCargaLayout = new javax.swing.GroupLayout(PanelCarga);
-        PanelCarga.setLayout(PanelCargaLayout);
-        PanelCargaLayout.setHorizontalGroup(
-            PanelCargaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 307, Short.MAX_VALUE)
+        lblTituloConfiguracion.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        lblTituloConfiguracion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTituloConfiguracion.setText("CONFIGURACIÓN INICIAL");
+
+        lblPlantasConfig.setText("Cantidad de plantas:");
+
+        lblConejosConfig.setText("Cantidad de conejos:");
+
+        lblLobosConfig.setText("Cantidad de lobos:");
+
+        lblClimaConfig.setText("Clima inicial:");
+
+        cbClima.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        lblTurnosConfig.setText("Turnos totales:");
+
+        btnIniciarSimulacion.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnIniciarSimulacion.setText("Iniciar simulación");
+        btnIniciarSimulacion.addActionListener(this::btnIniciarSimulacionActionPerformed);
+
+        btnVolverBienvenida.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnVolverBienvenida.setText("Volver");
+        btnVolverBienvenida.addActionListener(this::btnVolverBienvenidaActionPerformed);
+
+        javax.swing.GroupLayout PanelConfiguracionLayout = new javax.swing.GroupLayout(PanelConfiguracion);
+        PanelConfiguracion.setLayout(PanelConfiguracionLayout);
+        PanelConfiguracionLayout.setHorizontalGroup(
+            PanelConfiguracionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelConfiguracionLayout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addGroup(PanelConfiguracionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelConfiguracionLayout.createSequentialGroup()
+                        .addGroup(PanelConfiguracionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblClimaConfig)
+                            .addComponent(lblTurnosConfig))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(PanelConfiguracionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(cbClima, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(spTurnos)))
+                    .addGroup(PanelConfiguracionLayout.createSequentialGroup()
+                        .addGroup(PanelConfiguracionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblConejosConfig)
+                            .addComponent(lblLobosConfig)
+                            .addComponent(lblPlantasConfig))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(PanelConfiguracionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(spLobos, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)
+                            .addComponent(spConejos)
+                            .addComponent(spPlantas))))
+                .addGap(59, 59, 59))
+            .addGroup(PanelConfiguracionLayout.createSequentialGroup()
+                .addGap(163, 163, 163)
+                .addGroup(PanelConfiguracionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(btnVolverBienvenida, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnIniciarSimulacion, javax.swing.GroupLayout.DEFAULT_SIZE, 316, Short.MAX_VALUE)
+                    .addGroup(PanelConfiguracionLayout.createSequentialGroup()
+                        .addComponent(lblTituloConfiguracion)
+                        .addGap(10, 10, 10)))
+                .addContainerGap(172, Short.MAX_VALUE))
         );
-        PanelCargaLayout.setVerticalGroup(
-            PanelCargaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 277, Short.MAX_VALUE)
+        PanelConfiguracionLayout.setVerticalGroup(
+            PanelConfiguracionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelConfiguracionLayout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addComponent(lblTituloConfiguracion)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(PanelConfiguracionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblPlantasConfig)
+                    .addComponent(spPlantas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(PanelConfiguracionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblConejosConfig)
+                    .addComponent(spConejos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(PanelConfiguracionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblLobosConfig)
+                    .addComponent(spLobos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(PanelConfiguracionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblClimaConfig)
+                    .addComponent(cbClima, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(PanelConfiguracionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblTurnosConfig)
+                    .addComponent(spTurnos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
+                .addComponent(btnIniciarSimulacion, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addComponent(btnVolverBienvenida, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(191, 191, 191))
         );
 
-        PanelCentral.add(PanelCarga, "card2");
+        PanelCentral.add(PanelConfiguracion, "configuracion");
 
         PanelJuego.setLayout(new java.awt.BorderLayout());
 
-        lstInformacion.setModel(new javax.swing.AbstractListModel<String>() {
+        PanelEstado.setBackground(new java.awt.Color(153, 153, 153));
+
+        lblTurno.setText("Turno:");
+        PanelEstado.add(lblTurno);
+        PanelEstado.add(jSeparator4);
+
+        lblClima.setText("Clima:");
+        PanelEstado.add(lblClima);
+        PanelEstado.add(jSeparator5);
+
+        lblPlantas.setText("Plantas:");
+        PanelEstado.add(lblPlantas);
+        PanelEstado.add(jSeparator3);
+
+        lblConejos.setText("Conejos:");
+        PanelEstado.add(lblConejos);
+        PanelEstado.add(jSeparator2);
+
+        lblLobos.setText("Lobos:");
+        PanelEstado.add(lblLobos);
+
+        PanelJuego.add(PanelEstado, java.awt.BorderLayout.NORTH);
+
+        PanelEcosistema.setLayout(new java.awt.BorderLayout());
+
+        PanelGrilla.setPreferredSize(new java.awt.Dimension(0, 330));
+        PanelGrilla.setLayout(new java.awt.BorderLayout());
+
+        lblTituloGrilla.setText("Vista del ecosistema");
+        PanelGrilla.add(lblTituloGrilla, java.awt.BorderLayout.NORTH);
+
+        scrollGrilla.setPreferredSize(new java.awt.Dimension(290, 290));
+
+        tablaGrilla.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        scrollGrilla.setViewportView(tablaGrilla);
+
+        PanelContenedorGrilla.add(scrollGrilla);
+
+        PanelGrilla.add(PanelContenedorGrilla, java.awt.BorderLayout.CENTER);
+
+        PanelEcosistema.add(PanelGrilla, java.awt.BorderLayout.NORTH);
+
+        PanelTablaEntidades.setLayout(new java.awt.BorderLayout());
+
+        lblTituloEntidades.setText("Entidades vivas");
+        PanelTablaEntidades.add(lblTituloEntidades, java.awt.BorderLayout.NORTH);
+
+        tablaEntidades.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        scrollTablaEntidades.setViewportView(tablaEntidades);
+
+        PanelTablaEntidades.add(scrollTablaEntidades, java.awt.BorderLayout.CENTER);
+
+        PanelEcosistema.add(PanelTablaEntidades, java.awt.BorderLayout.CENTER);
+
+        PanelJuego.add(PanelEcosistema, java.awt.BorderLayout.CENTER);
+
+        PanelInformacion.setPreferredSize(new java.awt.Dimension(0, 110));
+
+        listaEventos.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        scrollPaneInformacion.setViewportView(lstInformacion);
+        scrollPaneInformacion.setViewportView(listaEventos);
 
         javax.swing.GroupLayout PanelInformacionLayout = new javax.swing.GroupLayout(PanelInformacion);
         PanelInformacion.setLayout(PanelInformacionLayout);
         PanelInformacionLayout.setHorizontalGroup(
             PanelInformacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(scrollPaneInformacion, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 307, Short.MAX_VALUE)
+            .addComponent(scrollPaneInformacion, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 651, Short.MAX_VALUE)
         );
         PanelInformacionLayout.setVerticalGroup(
             PanelInformacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelInformacionLayout.createSequentialGroup()
-                .addGap(0, 6, Short.MAX_VALUE)
+                .addGap(0, 4, Short.MAX_VALUE)
                 .addComponent(scrollPaneInformacion, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        PanelJuego.add(PanelInformacion, java.awt.BorderLayout.PAGE_END);
+        PanelJuego.add(PanelInformacion, java.awt.BorderLayout.SOUTH);
 
-        javax.swing.GroupLayout PanelEcosistemaLayout = new javax.swing.GroupLayout(PanelEcosistema);
-        PanelEcosistema.setLayout(PanelEcosistemaLayout);
-        PanelEcosistemaLayout.setHorizontalGroup(
-            PanelEcosistemaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 307, Short.MAX_VALUE)
+        PanelCentral.add(PanelJuego, "juego");
+
+        javax.swing.GroupLayout PanelReporteLayout = new javax.swing.GroupLayout(PanelReporte);
+        PanelReporte.setLayout(PanelReporteLayout);
+        PanelReporteLayout.setHorizontalGroup(
+            PanelReporteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 651, Short.MAX_VALUE)
         );
-        PanelEcosistemaLayout.setVerticalGroup(
-            PanelEcosistemaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 258, Short.MAX_VALUE)
+        PanelReporteLayout.setVerticalGroup(
+            PanelReporteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 559, Short.MAX_VALUE)
         );
 
-        PanelJuego.add(PanelEcosistema, java.awt.BorderLayout.CENTER);
-
-        PanelCentral.add(PanelJuego, "card3");
+        PanelCentral.add(PanelReporte, "card5");
 
         getContentPane().add(PanelCentral, java.awt.BorderLayout.CENTER);
 
-        jMenu1.setText("Inicio");
+        menuInicio.setText("Inicio");
 
-        jMenuItem1.setText("jMenuItem1");
-        jMenu1.add(jMenuItem1);
+        itemNuevaSimulacion.setText("Nueva simulación");
+        itemNuevaSimulacion.addActionListener(this::itemNuevaSimulacionActionPerformed);
+        menuInicio.add(itemNuevaSimulacion);
 
-        jMenuBar1.add(jMenu1);
+        itemVolverBienvenida.setText("Volver a bienvenida");
+        itemVolverBienvenida.addActionListener(this::itemVolverBienvenidaActionPerformed);
+        menuInicio.add(itemVolverBienvenida);
+        menuInicio.add(jSeparator6);
 
-        jMenu2.setText("Juego");
+        itemSalir.setText("Salir");
+        itemSalir.addActionListener(this::itemSalirActionPerformed);
+        menuInicio.add(itemSalir);
 
-        jMenu4.setText("Animales");
+        JMenuBar.add(menuInicio);
 
-        jMenuItem5.setText("Conejo");
-        jMenu4.add(jMenuItem5);
+        menuJuego.setText("Juego");
 
-        jMenuItem6.setText("Lobo");
-        jMenu4.add(jMenuItem6);
+        itemAvanzarTurno.setText("Avanzar turno");
+        itemAvanzarTurno.addActionListener(this::itemAvanzarTurnoActionPerformed);
+        menuJuego.add(itemAvanzarTurno);
 
-        jMenu2.add(jMenu4);
-        jMenu2.add(jSeparator1);
+        itemIntervencion.setText("Intervención");
+        itemIntervencion.addActionListener(this::itemIntervencionActionPerformed);
+        menuJuego.add(itemIntervencion);
 
-        jMenuItem7.setText("Planta");
-        jMenu2.add(jMenuItem7);
+        itemAgregarEntidad.setText("Agregar entidad");
+        itemAgregarEntidad.addActionListener(this::itemAgregarEntidadActionPerformed);
+        menuJuego.add(itemAgregarEntidad);
+        menuJuego.add(jSeparator1);
 
-        jMenuBar1.add(jMenu2);
+        itemGuardarSimulacion.setText("Guardar simulación");
+        itemGuardarSimulacion.addActionListener(this::itemGuardarSimulacionActionPerformed);
+        menuJuego.add(itemGuardarSimulacion);
 
-        jMenu3.setText("Historial");
+        itemCargarSimulacion.setText("Cargar simulación");
+        itemCargarSimulacion.addActionListener(this::itemCargarSimulacionActionPerformed);
+        menuJuego.add(itemCargarSimulacion);
+        menuJuego.add(jSeparator7);
 
-        jMenuItem2.setText("Ver historial");
-        jMenu3.add(jMenuItem2);
+        itemEstadoActual.setText("Estado actual");
+        itemEstadoActual.addActionListener(this::itemEstadoActualActionPerformed);
+        menuJuego.add(itemEstadoActual);
 
-        jMenuItem3.setText("Cargar");
-        jMenu3.add(jMenuItem3);
+        JMenuBar.add(menuJuego);
 
-        jMenuItem4.setText("Guardar");
-        jMenu3.add(jMenuItem4);
+        menuHistorial.setText("Historial");
 
-        jMenuBar1.add(jMenu3);
+        itemReporteFinal.setText("Reporte final");
+        itemReporteFinal.addActionListener(this::itemReporteFinalActionPerformed);
+        menuHistorial.add(itemReporteFinal);
 
-        setJMenuBar(jMenuBar1);
+        itemEventosCompletos.setText("Eventos completos");
+        itemEventosCompletos.addActionListener(this::itemEventosCompletosActionPerformed);
+        menuHistorial.add(itemEventosCompletos);
+
+        itemHistorialPartidas.setText("Historial de partidas");
+        itemHistorialPartidas.addActionListener(this::itemHistorialPartidasActionPerformed);
+        menuHistorial.add(itemHistorialPartidas);
+
+        JMenuBar.add(menuHistorial);
+
+        setJMenuBar(JMenuBar);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void configurarVistaInicial() {
+        configurarVentana();
+        configurarPanelLateral();
+        configurarSpinners();
+        configurarComboClima();
+        configurarEstadoInicial();
+    }
+
+    private void configurarSpinners() {
+        spPlantas.setModel(new javax.swing.SpinnerNumberModel(5, 5, 30, 1));
+        spConejos.setModel(new javax.swing.SpinnerNumberModel(2, 2, 15, 1));
+        spLobos.setModel(new javax.swing.SpinnerNumberModel(1, 1, 5, 1));
+        spTurnos.setModel(new javax.swing.SpinnerNumberModel(10, 10, 50, 1));
+    }
+
+    private void configurarVentana() {
+        setSize(950, 700);
+        setMinimumSize(new java.awt.Dimension(850, 600));
+        setLocationRelativeTo(null);
+    }
+
+    private void configurarCierreVentana() {
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+
+        addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                accionCerrarAplicacion();
+            }
+        });
+    }
+
+    private void configurarPanelLateral() {
+        PanelLateral.setPreferredSize(new java.awt.Dimension(160, 0));
+    }
+
+    private void accionNuevaSimulacion() {
+        int opcion = javax.swing.JOptionPane.showConfirmDialog(
+                this,
+                "¿Desea iniciar una nueva simulación? Se perderán los cambios no guardados.",
+                "Nueva simulación",
+                javax.swing.JOptionPane.YES_NO_OPTION
+        );
+
+        if (opcion == javax.swing.JOptionPane.YES_OPTION) {
+            habilitarPanelLateral(false);
+            habilitarMenuPrincipal(false);
+            mostrarPanelConfiguracion();
+        }
+    }
+
+    private void accionAvanzarTurno() {
+        if (controlador == null || !controlador.haySimulacionEnCurso()) {
+            mostrarError("No hay simulación en curso.");
+            return;
+        }
+
+        String error = controlador.avanzarTurno();
+
+        if (error != null) {
+            mostrarError(error);
+            return;
+        }
+
+        actualizarVistaJuego();
+
+        if (controlador.requiereIntervencion()) {
+            mostrarIntervencion();
+        }
+
+        if (controlador.simulacionFinalizada()) {
+            actualizarVistaJuego();
+            btnAvanzarTurno.setEnabled(false);
+            btnIntervencion.setEnabled(false);
+            btnAgregarEntidad.setEnabled(false);
+
+            itemAvanzarTurno.setEnabled(false);
+            itemIntervencion.setEnabled(false);
+            itemAgregarEntidad.setEnabled(false);
+
+            mostrarMensaje(controlador.getCausaFinalizacion());
+            mostrarReporteFinal();
+        }
+    }
+
+    private void accionAgregarEntidad() {
+        if (controlador == null || !controlador.haySimulacionEnCurso()) {
+            mostrarError("No hay simulación en curso.");
+            return;
+        }
+
+        String[] opciones = {"Planta", "Conejo", "Lobo"};
+
+        String tipo = (String) javax.swing.JOptionPane.showInputDialog(
+                this,
+                "Seleccione qué entidad agregar:",
+                "Agregar entidad",
+                javax.swing.JOptionPane.QUESTION_MESSAGE,
+                null,
+                opciones,
+                opciones[0]
+        );
+
+        if (tipo == null) {
+            return;
+        }
+
+        String error = controlador.agregarEntidad(tipo);
+
+        if (error != null) {
+            mostrarError(error);
+        }
+
+        actualizarVistaJuego();
+    }
+
+    private void accionEstadoActual() {
+        if (controlador == null || controlador.getEcosistema() == null) {
+            mostrarError("No hay simulación en curso.");
+            return;
+        }
+
+        String estado = "ESTADO ACTUAL\n"
+                + "====================\n"
+                + "Turno: " + controlador.getTurnoActual() + " / " + controlador.getTurnosTotales() + "\n"
+                + "Clima: " + controlador.getClimaActual().getNombreVisible() + "\n"
+                + "Plantas vivas: " + controlador.getCantidadPlantasVivas() + "\n"
+                + "Conejos vivos: " + controlador.getCantidadConejosVivos() + "\n"
+                + "Lobos vivos: " + controlador.getCantidadLobosVivos();
+
+        javax.swing.JOptionPane.showMessageDialog(this, estado, "Estado actual", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    private void accionEventosCompletos() {
+        if (controlador == null || controlador.getEcosistema() == null) {
+            mostrarError("No hay simulación en curso.");
+            return;
+        }
+
+        StringBuilder sb = new StringBuilder();
+
+        for (String evento : controlador.getEventosTotales()) {
+            sb.append(evento).append("\n");
+        }
+
+        javax.swing.JTextArea area = new javax.swing.JTextArea(sb.toString());
+        area.setEditable(false);
+        area.setColumns(50);
+        area.setRows(20);
+
+        javax.swing.JScrollPane scroll = new javax.swing.JScrollPane(area);
+
+        javax.swing.JOptionPane.showMessageDialog(this, scroll, "Eventos completos", javax.swing.JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    private void accionSalir() {
+        accionCerrarAplicacion();
+    }
+
+    private void accionCerrarAplicacion() {
+        if (controlador != null && controlador.getEcosistema() != null) {
+            int opcionGuardar = javax.swing.JOptionPane.showConfirmDialog(
+                    this,
+                    "¿Desea guardar la simulación antes de salir?",
+                    "Guardar antes de salir",
+                    javax.swing.JOptionPane.YES_NO_CANCEL_OPTION
+            );
+
+            if (opcionGuardar == javax.swing.JOptionPane.CANCEL_OPTION
+                    || opcionGuardar == javax.swing.JOptionPane.CLOSED_OPTION) {
+                return;
+            }
+
+            if (opcionGuardar == javax.swing.JOptionPane.YES_OPTION) {
+                String error = controlador.guardarSimulacion();
+
+                if (error != null) {
+                    mostrarError(error);
+                    return;
+                }
+            }
+        }
+
+        int opcionSalir = javax.swing.JOptionPane.showConfirmDialog(
+                this,
+                "¿Desea salir de la aplicación?",
+                "Salir",
+                javax.swing.JOptionPane.YES_NO_OPTION
+        );
+
+        if (opcionSalir == javax.swing.JOptionPane.YES_OPTION) {
+            System.exit(0);
+        }
+    }
+
+    private void accionGuardarSimulacion() {
+        if (controlador == null || controlador.getEcosistema() == null) {
+            mostrarError("No hay simulación para guardar.");
+            return;
+        }
+
+        String error = controlador.guardarSimulacion();
+
+        if (error != null) {
+            mostrarError(error);
+            return;
+        }
+
+        mostrarMensaje("Simulación guardada correctamente.");
+    }
+
+    private void accionCargarSimulacion() {
+        if (controlador == null) {
+            mostrarError("No se encontró el controlador.");
+            return;
+        }
+
+        if (!controlador.existeSimulacionGuardada()) {
+            mostrarError("No existe una simulación guardada.");
+            return;
+        }
+
+        int opcion = javax.swing.JOptionPane.showConfirmDialog(
+                this,
+                "¿Desea cargar la simulación guardada? Se reemplazará la simulación actual.",
+                "Cargar simulación",
+                javax.swing.JOptionPane.YES_NO_OPTION
+        );
+
+        if (opcion != javax.swing.JOptionPane.YES_OPTION) {
+            return;
+        }
+
+        String error = controlador.cargarSimulacion();
+
+        if (error != null) {
+            mostrarError(error);
+            return;
+        }
+
+        habilitarPanelLateral(true);
+        habilitarMenuPrincipal(true);
+
+        boolean sigueActiva = !controlador.simulacionFinalizada();
+
+        btnAvanzarTurno.setEnabled(sigueActiva);
+        btnIntervencion.setEnabled(controlador.requiereIntervencion());
+        btnAgregarEntidad.setEnabled(sigueActiva);
+        btnGuardar.setEnabled(true);
+
+        itemAvanzarTurno.setEnabled(sigueActiva);
+        itemIntervencion.setEnabled(controlador.requiereIntervencion());
+        itemAgregarEntidad.setEnabled(sigueActiva);
+        itemGuardarSimulacion.setEnabled(true);
+        itemCargarSimulacion.setEnabled(true);
+        itemEstadoActual.setEnabled(true);
+
+        mostrarPanelJuego();
+        actualizarVistaJuego();
+
+        mostrarMensaje("Simulación cargada correctamente.");
+    }
+
+    private void accionHistorialPartidas() {
+        if (controlador == null) {
+            mostrarError("No se encontró el controlador.");
+            return;
+        }
+
+        String historial = controlador.cargarHistorialPartidas();
+
+        javax.swing.JTextArea area = new javax.swing.JTextArea(historial);
+        area.setEditable(false);
+        area.setColumns(55);
+        area.setRows(20);
+        area.setLineWrap(true);
+        area.setWrapStyleWord(true);
+
+        javax.swing.JScrollPane scroll = new javax.swing.JScrollPane(area);
+
+        javax.swing.JOptionPane.showMessageDialog(
+                this,
+                scroll,
+                "Historial de partidas",
+                javax.swing.JOptionPane.INFORMATION_MESSAGE
+        );
+    }
+
+    private void btnEmpezarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmpezarActionPerformed
+        // TODO add your handling code here:
+        mostrarPanelConfiguracion();
+    }//GEN-LAST:event_btnEmpezarActionPerformed
+
+    private void btnAvanzarTurnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAvanzarTurnoActionPerformed
+        // TODO add your handling code here:
+        if (controlador == null || !controlador.haySimulacionEnCurso()) {
+            mostrarError("No hay simulación en curso.");
+            return;
+        }
+
+        String error = controlador.avanzarTurno();
+
+        if (error != null) {
+            mostrarError(error);
+            return;
+        }
+
+        actualizarVistaJuego();
+
+        if (controlador.requiereIntervencion()) {
+            mostrarIntervencion();
+        }
+
+        if (controlador.simulacionFinalizada()) {
+            actualizarVistaJuego();
+            btnAvanzarTurno.setEnabled(false);
+            btnIntervencion.setEnabled(false);
+            btnAgregarEntidad.setEnabled(false);
+            mostrarMensaje(controlador.getCausaFinalizacion());
+            mostrarReporteFinal();
+        }
+    }//GEN-LAST:event_btnAvanzarTurnoActionPerformed
+
+    private void btnVolverBienvenidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverBienvenidaActionPerformed
+        // TODO add your handling code here:
+        mostrarPanelBienvenida();
+    }//GEN-LAST:event_btnVolverBienvenidaActionPerformed
+
+    private void btnIniciarSimulacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarSimulacionActionPerformed
+        // TODO add your handling code here:
+        if (controlador == null) {
+            mostrarError("No se inicializó el controlador.");
+            return;
+        }
+
+        int plantas = (int) spPlantas.getValue();
+        int conejos = (int) spConejos.getValue();
+        int lobos = (int) spLobos.getValue();
+        int turnos = (int) spTurnos.getValue();
+
+        String climaSeleccionado = (String) cbClima.getSelectedItem();
+        Clima clima = Clima.desdeTexto(climaSeleccionado);
+
+        String error = controlador.iniciarNuevaSimulacion(plantas, conejos, lobos, clima, turnos);
+
+        if (error != null) {
+            mostrarError(error);
+            return;
+        }
+
+        habilitarPanelLateral(true);
+        habilitarMenuPrincipal(true);
+        itemAvanzarTurno.setEnabled(true);
+        itemIntervencion.setEnabled(false);
+        itemAgregarEntidad.setEnabled(true);
+
+        mostrarPanelJuego();
+        actualizarVistaJuego();
+
+        mostrarMensaje("Simulación iniciada correctamente.");
+    }//GEN-LAST:event_btnIniciarSimulacionActionPerformed
+
+    private void btnAgregarEntidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarEntidadActionPerformed
+        // TODO add your handling code here:
+        accionAgregarEntidad();
+    }//GEN-LAST:event_btnAgregarEntidadActionPerformed
+
+    private void btnNuevaSimulacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevaSimulacionActionPerformed
+        // TODO add your handling code here:
+        accionNuevaSimulacion();
+    }//GEN-LAST:event_btnNuevaSimulacionActionPerformed
+
+    private void btnIntervencionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIntervencionActionPerformed
+        // TODO add your handling code here:
+        if (controlador == null || !controlador.haySimulacionEnCurso()) {
+            mostrarError("No hay simulación en curso.");
+            return;
+        }
+
+        mostrarIntervencion();
+    }//GEN-LAST:event_btnIntervencionActionPerformed
+
+    private void itemNuevaSimulacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemNuevaSimulacionActionPerformed
+        // TODO add your handling code here:
+        accionNuevaSimulacion();
+    }//GEN-LAST:event_itemNuevaSimulacionActionPerformed
+
+    private void itemVolverBienvenidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemVolverBienvenidaActionPerformed
+        // TODO add your handling code here:
+
+        mostrarPanelBienvenida();
+    }//GEN-LAST:event_itemVolverBienvenidaActionPerformed
+
+    private void itemSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemSalirActionPerformed
+        // TODO add your handling code here:
+        accionSalir();
+    }//GEN-LAST:event_itemSalirActionPerformed
+
+    private void itemAvanzarTurnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemAvanzarTurnoActionPerformed
+        // TODO add your handling code here:
+        accionAvanzarTurno();
+    }//GEN-LAST:event_itemAvanzarTurnoActionPerformed
+
+    private void itemIntervencionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemIntervencionActionPerformed
+        // TODO add your handling code here:
+        if (controlador == null || !controlador.haySimulacionEnCurso()) {
+            mostrarError("No hay simulación en curso.");
+            return;
+        }
+
+        mostrarIntervencion();
+    }//GEN-LAST:event_itemIntervencionActionPerformed
+
+    private void itemAgregarEntidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemAgregarEntidadActionPerformed
+        // TODO add your handling code here:
+        accionAgregarEntidad();
+    }//GEN-LAST:event_itemAgregarEntidadActionPerformed
+
+    private void itemGuardarSimulacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemGuardarSimulacionActionPerformed
+        // TODO add your handling code here:
+        accionGuardarSimulacion();
+    }//GEN-LAST:event_itemGuardarSimulacionActionPerformed
+
+    private void itemEstadoActualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemEstadoActualActionPerformed
+        // TODO add your handling code here:
+        accionEstadoActual();
+    }//GEN-LAST:event_itemEstadoActualActionPerformed
+
+    private void itemReporteFinalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemReporteFinalActionPerformed
+        // TODO add your handling code here:
+        mostrarReporteFinal();
+    }//GEN-LAST:event_itemReporteFinalActionPerformed
+
+    private void itemEventosCompletosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemEventosCompletosActionPerformed
+        // TODO add your handling code here:
+        accionEventosCompletos();
+    }//GEN-LAST:event_itemEventosCompletosActionPerformed
+
+    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+        // TODO add your handling code here:
+        accionGuardarSimulacion();
+    }//GEN-LAST:event_btnGuardarActionPerformed
+
+    private void itemCargarSimulacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemCargarSimulacionActionPerformed
+        // TODO add your handling code here:
+        accionCargarSimulacion();
+    }//GEN-LAST:event_itemCargarSimulacionActionPerformed
+
+    private void itemHistorialPartidasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemHistorialPartidasActionPerformed
+        // TODO add your handling code here:
+        accionHistorialPartidas();
+    }//GEN-LAST:event_itemHistorialPartidasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -257,35 +964,359 @@ public class vistaPrincipal extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(() -> new vistaPrincipal().setVisible(true));
     }
 
+    private void mostrarPanelBienvenida() {
+        CardLayout card = (CardLayout) PanelCentral.getLayout();
+        card.show(PanelCentral, "bienvenida");
+    }
+
+    private void mostrarPanelConfiguracion() {
+        CardLayout card = (CardLayout) PanelCentral.getLayout();
+        card.show(PanelCentral, "configuracion");
+    }
+
+    private void configurarEstadoInicial() {
+        habilitarPanelLateral(false);
+        habilitarMenuPrincipal(false);
+        mostrarPanelBienvenida();
+    }
+
+    private void habilitarPanelLateral(boolean habilitar) {
+        btnAvanzarTurno.setEnabled(habilitar);
+        btnIntervencion.setEnabled(habilitar);
+        btnAgregarEntidad.setEnabled(habilitar);
+        btnNuevaSimulacion.setEnabled(habilitar);
+        btnGuardar.setEnabled(habilitar);
+    }
+
+    private void habilitarMenuPrincipal(boolean habilitarSimulacion) {
+        menuInicio.setEnabled(true);
+        menuJuego.setEnabled(true);
+        menuHistorial.setEnabled(true);
+
+        itemAvanzarTurno.setEnabled(habilitarSimulacion);
+        itemIntervencion.setEnabled(false);
+        itemAgregarEntidad.setEnabled(habilitarSimulacion);
+        itemGuardarSimulacion.setEnabled(habilitarSimulacion);
+        itemEstadoActual.setEnabled(habilitarSimulacion);
+        itemReporteFinal.setEnabled(habilitarSimulacion);
+        itemEventosCompletos.setEnabled(habilitarSimulacion);
+
+        // Estos quedam habilitados siempre porque pueden usarse al abrir el juego
+        itemCargarSimulacion.setEnabled(true);
+        itemHistorialPartidas.setEnabled(true);
+    }
+
+    private void mostrarMensaje(String mensaje) {
+        javax.swing.JOptionPane.showMessageDialog(this, mensaje);
+    }
+
+    private void mostrarError(String mensaje) {
+        javax.swing.JOptionPane.showMessageDialog(this, mensaje, "Error", javax.swing.JOptionPane.ERROR_MESSAGE);
+    }
+
+    private void configurarComboClima() {
+        cbClima.removeAllItems();
+        cbClima.addItem("Soleado");
+        cbClima.addItem("Lluvioso");
+        cbClima.addItem("Sequía");
+        cbClima.addItem("Invierno");
+    }
+
+    public void actualizarEstado() {
+        if (controlador == null) {
+            return;
+        }
+
+        lblTurno.setText("Turno: " + controlador.getTurnoActual() + " / " + controlador.getTurnosTotales());
+        lblClima.setText("Clima: " + controlador.getClimaActual().getNombreVisible());
+        lblPlantas.setText("Plantas: " + controlador.getCantidadPlantasVivas());
+        lblConejos.setText("Conejos: " + controlador.getCantidadConejosVivos());
+        lblLobos.setText("Lobos: " + controlador.getCantidadLobosVivos());
+    }
+
+    private void actualizarGrilla() {
+        String[][] grilla = controlador.obtenerGrillaEcosistema();
+
+        String[] columnas = new String[grilla[0].length];
+
+        for (int i = 0; i < columnas.length; i++) {
+            columnas[i] = "";
+        }
+
+        DefaultTableModel modelo = new DefaultTableModel(grilla, columnas) {
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                return false;
+            }
+        };
+
+        tablaGrilla.setModel(modelo);
+        tablaGrilla.setRowHeight(28);
+
+        for (int i = 0; i < tablaGrilla.getColumnCount(); i++) {
+            tablaGrilla.getColumnModel().getColumn(i).setPreferredWidth(28);
+            tablaGrilla.getColumnModel().getColumn(i).setMinWidth(28);
+            tablaGrilla.getColumnModel().getColumn(i).setMaxWidth(28);
+        }
+
+        tablaGrilla.setTableHeader(null);
+        tablaGrilla.setCellSelectionEnabled(false);
+        tablaGrilla.setRowSelectionAllowed(false);
+        tablaGrilla.setColumnSelectionAllowed(false);
+        configurarRendererGrilla();
+    }
+
+    public void actualizarTablaEntidades() {
+        if (controlador == null) {
+            return;
+        }
+
+        String[] columnas = {"Tipo", "Nombre", "Energía", "Edad", "Fila", "Columna", "Estado"};
+        Object[][] datos = controlador.obtenerDatosTablaEntidades();
+
+        DefaultTableModel modelo = new DefaultTableModel(datos, columnas) {
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                return false;
+            }
+        };
+
+        tablaEntidades.setModel(modelo);
+        tablaEntidades.setRowHeight(22);
+        tablaEntidades.getColumnModel().getColumn(0).setPreferredWidth(70);  // Tipo
+        tablaEntidades.getColumnModel().getColumn(1).setPreferredWidth(90);  // Nombre
+        tablaEntidades.getColumnModel().getColumn(2).setPreferredWidth(70);  // Energía
+        tablaEntidades.getColumnModel().getColumn(3).setPreferredWidth(50);  // Edad
+        tablaEntidades.getColumnModel().getColumn(4).setPreferredWidth(50);  // Fila
+        tablaEntidades.getColumnModel().getColumn(5).setPreferredWidth(70);  // Columna
+        tablaEntidades.getColumnModel().getColumn(6).setPreferredWidth(100); // Estado
+    }
+
+    public void actualizarEventos() {
+        if (controlador == null) {
+            return;
+        }
+
+        DefaultListModel<String> modeloLista = new DefaultListModel<>();
+
+        for (String evento : controlador.getEventosTurno()) {
+            modeloLista.addElement(evento);
+        }
+
+        listaEventos.setModel(modeloLista);
+    }
+
+    public void actualizarVistaJuego() {
+        if (controlador == null) {
+            return;
+        }
+
+        btnIntervencion.setEnabled(controlador.requiereIntervencion());
+
+        actualizarEstado();
+        actualizarEventos();
+        actualizarGrilla();
+        actualizarTablaEntidades();
+    }
+
+    private void mostrarIntervencion() {
+        String[] opciones = {
+            "Cambiar clima",
+            "Agregar planta",
+            "Agregar conejo",
+            "Agregar lobo",
+            "No intervenir"
+        };
+
+        String opcion = (String) JOptionPane.showInputDialog(
+                this,
+                "Seleccione una intervención:",
+                "Intervención del jugador",
+                JOptionPane.QUESTION_MESSAGE,
+                null,
+                opciones,
+                opciones[4]
+        );
+
+        if (opcion == null || opcion.equals("No intervenir")) {
+            return;
+        }
+
+        String error = null;
+
+        switch (opcion) {
+            case "Cambiar clima":
+                Clima nuevoClima = solicitarClima();
+                if (nuevoClima != null) {
+                    error = controlador.cambiarClima(nuevoClima);
+                }
+                break;
+
+            case "Agregar planta":
+                error = controlador.agregarEntidad("planta");
+                break;
+
+            case "Agregar conejo":
+                error = controlador.agregarEntidad("conejo");
+                break;
+
+            case "Agregar lobo":
+                error = controlador.agregarEntidad("lobo");
+                break;
+        }
+
+        if (error != null) {
+            mostrarError(error);
+        }
+
+        actualizarVistaJuego();
+    }
+
+    private Clima solicitarClima() {
+        String[] opciones = {
+            "Soleado",
+            "Lluvioso",
+            "Sequía",
+            "Invierno"
+        };
+
+        String seleccion = (String) javax.swing.JOptionPane.showInputDialog(
+                this,
+                "Seleccione el nuevo clima:",
+                "Cambiar clima",
+                javax.swing.JOptionPane.QUESTION_MESSAGE,
+                null,
+                opciones,
+                controlador.getClimaActual().getNombreVisible()
+        );
+
+        if (seleccion == null) {
+            return null;
+        }
+
+        return Clima.desdeTexto(seleccion);
+    }
+
+    private void mostrarReporteFinal() {
+        String reporte = controlador.generarReporteFinal();
+
+        javax.swing.JTextArea area = new javax.swing.JTextArea(reporte);
+        area.setEditable(false);
+        area.setColumns(45);
+        area.setRows(20);
+
+        javax.swing.JScrollPane scroll = new javax.swing.JScrollPane(area);
+
+        JOptionPane.showMessageDialog(this, scroll, "Reporte final", JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    private void mostrarPanelJuego() {
+        java.awt.CardLayout card = (java.awt.CardLayout) PanelCentral.getLayout();
+        card.show(PanelCentral, "juego");
+    }
+
+    private void configurarRendererGrilla() {
+        tablaGrilla.setDefaultRenderer(Object.class, new DefaultTableCellRenderer() {
+            @Override
+            public Component getTableCellRendererComponent(
+                    JTable table,
+                    Object value,
+                    boolean isSelected,
+                    boolean hasFocus,
+                    int row,
+                    int column) {
+
+                Component componente = super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
+
+                String texto = value != null ? value.toString() : "";
+
+                componente.setForeground(Color.BLACK);
+
+                if (texto.equals("P")) {
+                    componente.setBackground(new Color(144, 238, 144)); // verde claro
+                } else if (texto.equals("C")) {
+                    componente.setBackground(new Color(173, 216, 230)); // celeste
+                } else if (texto.equals("L")) {
+                    componente.setBackground(new Color(255, 160, 160)); // rojo suave
+                } else {
+                    componente.setBackground(Color.WHITE);
+                }
+
+                setHorizontalAlignment(CENTER);
+
+                return componente;
+            }
+        });
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuBar JMenuBar;
     private javax.swing.JPanel PanelBienvenida;
-    private javax.swing.JPanel PanelCarga;
     private javax.swing.JPanel PanelCentral;
+    private javax.swing.JPanel PanelConfiguracion;
+    private javax.swing.JPanel PanelContenedorGrilla;
     private javax.swing.JPanel PanelEcosistema;
+    private javax.swing.JPanel PanelEstado;
+    private javax.swing.JPanel PanelGrilla;
     private javax.swing.JPanel PanelInformacion;
     private javax.swing.JPanel PanelJuego;
     private javax.swing.JPanel PanelLateral;
+    private javax.swing.JPanel PanelReporte;
+    private javax.swing.JPanel PanelTablaEntidades;
+    private javax.swing.JButton btnAgregarEntidad;
+    private javax.swing.JButton btnAvanzarTurno;
     private javax.swing.JButton btnEmpezar;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
-    private javax.swing.JMenuItem jMenuItem7;
+    private javax.swing.JButton btnGuardar;
+    private javax.swing.JButton btnIniciarSimulacion;
+    private javax.swing.JButton btnIntervencion;
+    private javax.swing.JButton btnNuevaSimulacion;
+    private javax.swing.JButton btnVolverBienvenida;
+    private javax.swing.JComboBox<String> cbClima;
+    private javax.swing.JMenuItem itemAgregarEntidad;
+    private javax.swing.JMenuItem itemAvanzarTurno;
+    private javax.swing.JMenuItem itemCargarSimulacion;
+    private javax.swing.JMenuItem itemEstadoActual;
+    private javax.swing.JMenuItem itemEventosCompletos;
+    private javax.swing.JMenuItem itemGuardarSimulacion;
+    private javax.swing.JMenuItem itemHistorialPartidas;
+    private javax.swing.JMenuItem itemIntervencion;
+    private javax.swing.JMenuItem itemNuevaSimulacion;
+    private javax.swing.JMenuItem itemReporteFinal;
+    private javax.swing.JMenuItem itemSalir;
+    private javax.swing.JMenuItem itemVolverBienvenida;
     private javax.swing.JPopupMenu.Separator jSeparator1;
-    private javax.swing.JList<String> lstInformacion;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JPopupMenu.Separator jSeparator6;
+    private javax.swing.JPopupMenu.Separator jSeparator7;
+    private javax.swing.JLabel lblClima;
+    private javax.swing.JLabel lblClimaConfig;
+    private javax.swing.JLabel lblConejos;
+    private javax.swing.JLabel lblConejosConfig;
+    private javax.swing.JLabel lblLobos;
+    private javax.swing.JLabel lblLobosConfig;
+    private javax.swing.JLabel lblPlantas;
+    private javax.swing.JLabel lblPlantasConfig;
+    private javax.swing.JLabel lblTituloBienvenida;
+    private javax.swing.JLabel lblTituloConfiguracion;
+    private javax.swing.JLabel lblTituloEntidades;
+    private javax.swing.JLabel lblTituloGrilla;
+    private javax.swing.JLabel lblTurno;
+    private javax.swing.JLabel lblTurnosConfig;
+    private javax.swing.JList<String> listaEventos;
+    private javax.swing.JMenu menuHistorial;
+    private javax.swing.JMenu menuInicio;
+    private javax.swing.JMenu menuJuego;
+    private javax.swing.JScrollPane scrollGrilla;
     private javax.swing.JScrollPane scrollPaneInformacion;
+    private javax.swing.JScrollPane scrollTablaEntidades;
+    private javax.swing.JSpinner spConejos;
+    private javax.swing.JSpinner spLobos;
+    private javax.swing.JSpinner spPlantas;
+    private javax.swing.JSpinner spTurnos;
+    private javax.swing.JTable tablaEntidades;
+    private javax.swing.JTable tablaGrilla;
     // End of variables declaration//GEN-END:variables
 }
