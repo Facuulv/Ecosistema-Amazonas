@@ -336,50 +336,50 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Component id="lblClimaConfig" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                  </Group>
-                                  <Component id="lblTurnosConfig" max="32767" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="205" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="cbClima" max="32767" attributes="0"/>
-                                  <Component id="spTurnos" max="32767" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="lblConejosConfig" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblLobosConfig" min="-2" max="-2" attributes="0"/>
-                                  <Component id="lblPlantasConfig" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="163" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                  <Component id="spLobos" pref="72" max="32767" attributes="0"/>
-                                  <Component id="spConejos" max="32767" attributes="0"/>
-                                  <Component id="spPlantas" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="btnVolverBienvenida" pref="316" max="32767" attributes="0"/>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="lblTituloConfiguracion" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="btnIniciarSimulacion" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="122" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="103" alignment="0" groupAlignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="lblLobosConfig" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="lblConejosConfig" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="253" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="lblPlantasConfig" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="139" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="spPlantas" min="-2" pref="117" max="-2" attributes="0"/>
+                                              <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
+                                                  <Component id="spConejos" max="32767" attributes="0"/>
+                                                  <Component id="spLobos" max="32767" attributes="0"/>
+                                                  <Component id="cbClima" pref="117" max="32767" attributes="0"/>
+                                                  <Component id="spTurnos" max="32767" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                      </Group>
+                                  </Group>
+                                  <Component id="lblTurnosConfig" min="-2" pref="99" max="-2" attributes="0"/>
+                                  <Component id="lblClimaConfig" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="163" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="btnVolverBienvenida" max="32767" attributes="0"/>
-                          <Component id="btnIniciarSimulacion" pref="316" max="32767" attributes="0"/>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="lblTituloConfiguracion" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <EmptySpace pref="172" max="32767" attributes="0"/>
+                      <EmptySpace min="136" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -388,10 +388,10 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
                       <Component id="lblTituloConfiguracion" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="lblPlantasConfig" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="spPlantas" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="spPlantas" alignment="1" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -413,11 +413,11 @@
                           <Component id="lblTurnosConfig" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="spTurnos" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="60" max="32767" attributes="0"/>
-                      <Component id="btnIniciarSimulacion" min="-2" pref="32" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                      <Component id="btnIniciarSimulacion" min="-2" pref="55" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                      <Component id="btnVolverBienvenida" min="-2" pref="32" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="191" max="-2" attributes="0"/>
+                      <Component id="btnVolverBienvenida" min="-2" pref="57" max="-2" attributes="0"/>
+                      <EmptySpace pref="129" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -434,6 +434,9 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblPlantasConfig">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="14" style="1"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Cantidad de plantas:"/>
               </Properties>
             </Component>
@@ -441,6 +444,9 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblConejosConfig">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="14" style="1"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Cantidad de conejos:"/>
               </Properties>
             </Component>
@@ -448,6 +454,9 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblLobosConfig">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="14" style="1"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Cantidad de lobos:"/>
               </Properties>
             </Component>
@@ -455,6 +464,9 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblClimaConfig">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="14" style="1"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Clima inicial:"/>
               </Properties>
             </Component>
@@ -475,6 +487,9 @@
             </Component>
             <Component class="javax.swing.JLabel" name="lblTurnosConfig">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="14" style="1"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Turnos totales:"/>
               </Properties>
             </Component>

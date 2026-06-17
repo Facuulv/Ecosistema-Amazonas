@@ -214,16 +214,21 @@ public class vistaPrincipal extends javax.swing.JFrame {
         lblTituloConfiguracion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTituloConfiguracion.setText("CONFIGURACIÓN INICIAL");
 
+        lblPlantasConfig.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblPlantasConfig.setText("Cantidad de plantas:");
 
+        lblConejosConfig.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblConejosConfig.setText("Cantidad de conejos:");
 
+        lblLobosConfig.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblLobosConfig.setText("Cantidad de lobos:");
 
+        lblClimaConfig.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblClimaConfig.setText("Clima inicial:");
 
         cbClima.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
+        lblTurnosConfig.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblTurnosConfig.setText("Turnos totales:");
 
         btnIniciarSimulacion.setBackground(new java.awt.Color(153, 255, 153));
@@ -240,46 +245,45 @@ public class vistaPrincipal extends javax.swing.JFrame {
         PanelConfiguracion.setLayout(PanelConfiguracionLayout);
         PanelConfiguracionLayout.setHorizontalGroup(
             PanelConfiguracionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelConfiguracionLayout.createSequentialGroup()
-                .addGap(33, 33, 33)
+            .addGroup(PanelConfiguracionLayout.createSequentialGroup()
                 .addGroup(PanelConfiguracionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelConfiguracionLayout.createSequentialGroup()
-                        .addGroup(PanelConfiguracionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(PanelConfiguracionLayout.createSequentialGroup()
-                                .addComponent(lblClimaConfig)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(lblTurnosConfig, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(205, 205, 205)
-                        .addGroup(PanelConfiguracionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(cbClima, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(spTurnos)))
-                    .addGroup(PanelConfiguracionLayout.createSequentialGroup()
-                        .addGroup(PanelConfiguracionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblConejosConfig)
-                            .addComponent(lblLobosConfig)
-                            .addComponent(lblPlantasConfig))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(163, 163, 163)
                         .addGroup(PanelConfiguracionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(spLobos, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)
-                            .addComponent(spConejos)
-                            .addComponent(spPlantas))))
-                .addGap(59, 59, 59))
-            .addGroup(PanelConfiguracionLayout.createSequentialGroup()
-                .addGap(163, 163, 163)
-                .addGroup(PanelConfiguracionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(btnVolverBienvenida, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnIniciarSimulacion, javax.swing.GroupLayout.DEFAULT_SIZE, 316, Short.MAX_VALUE)
+                            .addComponent(btnVolverBienvenida, javax.swing.GroupLayout.DEFAULT_SIZE, 316, Short.MAX_VALUE)
+                            .addGroup(PanelConfiguracionLayout.createSequentialGroup()
+                                .addComponent(lblTituloConfiguracion)
+                                .addGap(10, 10, 10))
+                            .addComponent(btnIniciarSimulacion, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(PanelConfiguracionLayout.createSequentialGroup()
-                        .addComponent(lblTituloConfiguracion)
-                        .addGap(10, 10, 10)))
-                .addContainerGap(172, Short.MAX_VALUE))
+                        .addGap(122, 122, 122)
+                        .addGroup(PanelConfiguracionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(PanelConfiguracionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(PanelConfiguracionLayout.createSequentialGroup()
+                                    .addGroup(PanelConfiguracionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(lblLobosConfig)
+                                        .addComponent(lblConejosConfig))
+                                    .addGap(253, 253, 253))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelConfiguracionLayout.createSequentialGroup()
+                                    .addComponent(lblPlantasConfig)
+                                    .addGap(139, 139, 139)
+                                    .addGroup(PanelConfiguracionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(spPlantas, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelConfiguracionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(spConejos)
+                                            .addComponent(spLobos)
+                                            .addComponent(cbClima, 0, 117, Short.MAX_VALUE)
+                                            .addComponent(spTurnos)))))
+                            .addComponent(lblTurnosConfig, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblClimaConfig))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         PanelConfiguracionLayout.setVerticalGroup(
             PanelConfiguracionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelConfiguracionLayout.createSequentialGroup()
                 .addGap(12, 12, 12)
                 .addComponent(lblTituloConfiguracion)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(42, 42, 42)
                 .addGroup(PanelConfiguracionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblPlantasConfig)
                     .addComponent(spPlantas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -299,11 +303,11 @@ public class vistaPrincipal extends javax.swing.JFrame {
                 .addGroup(PanelConfiguracionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblTurnosConfig)
                     .addComponent(spTurnos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
-                .addComponent(btnIniciarSimulacion, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(44, 44, 44)
+                .addComponent(btnIniciarSimulacion, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
-                .addComponent(btnVolverBienvenida, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(191, 191, 191))
+                .addComponent(btnVolverBienvenida, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(129, Short.MAX_VALUE))
         );
 
         PanelCentral.add(PanelConfiguracion, "configuracion");
@@ -818,45 +822,6 @@ public class vistaPrincipal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnAvanzarTurnoActionPerformed
 
-    private void btnVolverBienvenidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverBienvenidaActionPerformed
-        // TODO add your handling code here:
-        mostrarPanelBienvenida();
-    }//GEN-LAST:event_btnVolverBienvenidaActionPerformed
-
-    private void btnIniciarSimulacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarSimulacionActionPerformed
-        // TODO add your handling code here:
-        if (controlador == null) {
-            mostrarError("No se inicializó el controlador.");
-            return;
-        }
-
-        int plantas = (int) spPlantas.getValue();
-        int conejos = (int) spConejos.getValue();
-        int lobos = (int) spLobos.getValue();
-        int turnos = (int) spTurnos.getValue();
-
-        String climaSeleccionado = (String) cbClima.getSelectedItem();
-        Clima clima = Clima.desdeTexto(climaSeleccionado);
-
-        String error = controlador.iniciarNuevaSimulacion(plantas, conejos, lobos, clima, turnos);
-
-        if (error != null) {
-            mostrarError(error);
-            return;
-        }
-
-        habilitarPanelLateral(true);
-        habilitarMenuPrincipal(true);
-        itemAvanzarTurno.setEnabled(true);
-        itemIntervencion.setEnabled(false);
-        itemAgregarEntidad.setEnabled(true);
-
-        mostrarPanelJuego();
-        actualizarVistaJuego();
-
-        mostrarMensaje("Simulación iniciada correctamente.");
-    }//GEN-LAST:event_btnIniciarSimulacionActionPerformed
-
     private void btnAgregarEntidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarEntidadActionPerformed
         // TODO add your handling code here:
         accionAgregarEntidad();
@@ -947,6 +912,45 @@ public class vistaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
         accionHistorialPartidas();
     }//GEN-LAST:event_itemHistorialPartidasActionPerformed
+
+    private void btnVolverBienvenidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverBienvenidaActionPerformed
+        // TODO add your handling code here:
+        mostrarPanelBienvenida();
+    }//GEN-LAST:event_btnVolverBienvenidaActionPerformed
+
+    private void btnIniciarSimulacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarSimulacionActionPerformed
+        // TODO add your handling code here:
+        if (controlador == null) {
+            mostrarError("No se inicializó el controlador.");
+            return;
+        }
+
+        int plantas = (int) spPlantas.getValue();
+        int conejos = (int) spConejos.getValue();
+        int lobos = (int) spLobos.getValue();
+        int turnos = (int) spTurnos.getValue();
+
+        String climaSeleccionado = (String) cbClima.getSelectedItem();
+        Clima clima = Clima.desdeTexto(climaSeleccionado);
+
+        String error = controlador.iniciarNuevaSimulacion(plantas, conejos, lobos, clima, turnos);
+
+        if (error != null) {
+            mostrarError(error);
+            return;
+        }
+
+        habilitarPanelLateral(true);
+        habilitarMenuPrincipal(true);
+        itemAvanzarTurno.setEnabled(true);
+        itemIntervencion.setEnabled(false);
+        itemAgregarEntidad.setEnabled(true);
+
+        mostrarPanelJuego();
+        actualizarVistaJuego();
+
+        mostrarMensaje("Simulación iniciada correctamente.");
+    }//GEN-LAST:event_btnIniciarSimulacionActionPerformed
 
     /**
      * @param args the command line arguments
