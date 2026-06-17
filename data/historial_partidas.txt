@@ -66,3 +66,54 @@ Turno de mayor actividad: 1
 Cantidad de eventos en ese turno: 11
 ========================================
 
+========================================
+Fecha: 17/06/2026 19:35
+Turnos: 2 / 15
+Clima final: Invierno
+Causa: Colapso del ecosistema: se extinguieron las plantas.
+Plantas vivas: 0
+Conejos vivos: 12
+Lobos vivos: 4
+Nacimientos plantas: 0
+Nacimientos conejos: 3
+Muertes plantas: 20
+Muertes conejos: 6
+Muertes lobos: 0
+Turno de mayor actividad: 1
+Cantidad de eventos en ese turno: 39
+========================================
+
+========================================
+Fecha: 17/06/2026 19:35
+Turnos: 3 / 15
+Clima final: Invierno
+Causa: Colapso del ecosistema: se extinguieron las plantas.
+Plantas vivas: 0
+Conejos vivos: 15
+Lobos vivos: 2
+Nacimientos plantas: 0
+Nacimientos conejos: 11
+Muertes plantas: 30
+Muertes conejos: 6
+Muertes lobos: 0
+Turno de mayor actividad: 3
+Cantidad de eventos en ese turno: 37
+========================================
+
+========================================
+Fecha: 17/06/2026 19:36
+Turnos: 4 / 15
+Clima final: Invierno
+Causa: Colapso del ecosistema: se extinguieron las plantas.
+Plantas vivas: 0
+Conejos vivos: 14
+Lobos vivos: 1
+Nacimientos plantas: 0
+Nacimientos conejos: 11
+Muertes plantas: 31
+Muertes conejos: 2
+Muertes lobos: 0
+Turno de mayor actividad: 4
+Cantidad de eventos en ese turno: 28
+========================================
+

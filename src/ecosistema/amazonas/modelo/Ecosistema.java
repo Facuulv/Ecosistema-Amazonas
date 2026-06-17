@@ -121,6 +121,7 @@ public class Ecosistema {
         return turnoActual;
     }
 
+    // hace el setting del turno actual
     public void setTurnoActual(int turnoActual) {
         if (turnoActual >= 0) {
             this.turnoActual = turnoActual;

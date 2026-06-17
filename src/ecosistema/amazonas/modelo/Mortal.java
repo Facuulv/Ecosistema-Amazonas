@@ -14,6 +14,7 @@ public interface Mortal {
     void morir();
     double getEnergia();
 
+    // fuerza la muerte si la energia es menor o igual a cero
     default void verificarMuerte() {
         if (getEnergia() <= 0) {
             morir();

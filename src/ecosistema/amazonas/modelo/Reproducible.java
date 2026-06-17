@@ -14,9 +14,7 @@ public interface Reproducible {
 
     boolean puedeReproducirse();
 
-    /**
-     * Método default que centraliza la lógica de reproducción.
-     */
+   
     default void intentarReproduccion(Ecosistema eco) {
         if (puedeReproducirse()) {
             reproducirse(eco);

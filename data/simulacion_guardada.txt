@@ -4,98 +4,172 @@ SIMULACIÓN GUARDADA - ECOSISTEMA AMAZONAS
 
 [CONFIGURACION]
 TURNO=4
-TURNOS_TOTALES=10
-CLIMA=LLUVIOSO
+TURNOS_TOTALES=15
+CLIMA=INVIERNO
 FINALIZADA=true
-CAUSA_FINALIZACION=Colapso del ecosistema: se extinguieron los conejos.
+CAUSA_FINALIZACION=Colapso del ecosistema: se extinguieron las plantas.
 
 [RESUMEN_ESTADISTICO]
-NAC_PLANTAS=16
-NAC_CONEJOS=1
-MUE_PLANTAS=6
-MUE_CONEJOS=3
+NAC_PLANTAS=0
+NAC_CONEJOS=11
+MUE_PLANTAS=31
+MUE_CONEJOS=2
 MUE_LOBOS=0
-TURNO_MAYOR_ACTIVIDAD=1
-EVENTOS_MAYOR_ACTIVIDAD=11
+TURNO_MAYOR_ACTIVIDAD=4
+EVENTOS_MAYOR_ACTIVIDAD=28
 
 [RESULTADO_FINAL]
-PLANTAS_FINALES=15
-CONEJOS_FINALES=0
+PLANTAS_FINALES=0
+CONEJOS_FINALES=14
 LOBOS_FINALES=1
 
 [PLANTAS]
-Planta-1;0;0.0;false;2;3;4
-Planta-2;4;19.5;true;9;8;2
-Planta-3;4;17.3;true;9;5;2
-Planta-4;1;0.0;false;8;8;4
-Planta-5;4;16.9;true;8;6;3
-Planta-6;4;29.1;true;8;4;5
-Planta-7;0;0.0;false;1;7;3
-Planta-8;2;0.0;false;0;3;5
-Planta-9;4;19.6;true;6;3;5
-Planta-10;2;0.0;false;6;8;3
-Planta-11;3;20.5;true;0;8;2
-Planta-12;0;0.0;false;0;0;2
-Planta-13;2;38.8;true;2;8;5
-Planta-14;2;38.0;true;9;7;1
-Planta-15;2;39.6;true;8;2;1
-Planta-16;2;31.5;true;3;1;2
-Planta-17;1;57.2;true;1;7;3
-Planta-18;1;57.4;true;4;7;1
-Planta-19;1;56.7;true;5;4;2
-Planta-20;1;39.8;true;0;2;4
-Planta-21;1;35.4;true;3;8;2
+Planta-1;0;0.0;false;7;4;5
+Planta-2;1;0.0;false;2;9;1
+Planta-3;0;0.0;false;3;0;1
+Planta-4;0;0.0;false;3;2;5
+Planta-5;3;0.0;false;4;6;1
+Planta-6;3;0.0;false;8;1;2
+Planta-7;2;0.0;false;0;4;2
+Planta-8;1;0.0;false;8;8;1
+Planta-9;2;0.0;false;6;3;5
+Planta-10;2;0.0;false;0;6;2
+Planta-11;3;0.0;false;7;2;2
+Planta-12;3;0.0;false;6;0;5
+Planta-13;1;0.0;false;3;6;2
+Planta-14;0;0.0;false;2;4;2
+Planta-15;0;0.0;false;1;8;2
+Planta-16;1;0.0;false;2;6;4
+Planta-17;3;0.0;false;9;1;5
+Planta-18;1;0.0;false;4;5;3
+Planta-19;2;0.0;false;8;4;3
+Planta-20;2;0.0;false;0;1;3
+Planta-21;1;0.0;false;0;3;2
+Planta-22;2;0.0;false;1;0;3
+Planta-23;1;0.0;false;4;2;4
+Planta-24;2;0.0;false;8;6;4
+Planta-25;3;0.0;false;9;0;1
+Planta-26;2;0.0;false;5;8;4
+Planta-27;3;0.0;false;7;1;4
+Planta-28;2;0.0;false;5;3;3
+Planta-29;3;0.0;false;7;5;5
+Planta-30;2;0.0;false;0;0;4
+Planta-31;0;0.0;false;4;0;1
 [CONEJOS]
-Conejo-1;0;0.0;false;7;8;9;2.0
-Conejo-2;3;0.0;false;6;2;5;2.1
-Conejo-3;1;0.0;false;0;1;5;2.0
+Conejo-1;4;122.5;true;4;1;7;1.4
+Conejo-2;4;88.5;true;1;7;12;2.4
+Conejo-3;4;74.0;true;6;4;6;2.4
+Conejo-4;4;87.4;true;8;0;8;2.9
+Conejo-5;4;191.3;true;7;6;10;2.4
+Conejo-6;4;112.1;true;4;7;7;3.8
+Conejo-7;4;90.6;true;2;4;7;4.0
+Conejo-8;0;0.0;false;7;3;8;1.3
+Conejo-9;3;123.8;true;7;9;8;1.0
+Conejo-10;3;92.9;true;1;3;11;1.4
+Conejo-11;3;55.5;true;8;8;12;3.0
+Conejo-12;0;0.0;false;2;8;10;2.5
+Conejo-13;2;53.1;true;5;5;12;1.1
+Conejo-14;1;84.1;true;6;2;5;1.2
+Conejo-15;1;51.5;true;9;6;5;2.2
+Conejo-16;1;54.2;true;1;6;11;2.4
 [LOBOS]
-Lobo-1;4;185.1;true;6;5;10;41.0;3
+Lobo-1;4;146.9;true;3;4;15;26.2;2
 [EVENTOS_TOTALES]
-Turno 0: Simulación iniciada con clima Soleado.
+Turno 0: Simulación iniciada con clima Invierno.
 Turno 1: === Turno 1 ===
-Turno 1: Planta-1 se reprodujo. Nació Planta-6.
-Turno 1: Planta-2 se reprodujo. Nació Planta-7.
-Turno 1: Planta-3 se reprodujo. Nació Planta-8.
-Turno 1: Planta-5 se reprodujo. Nació Planta-9.
-Turno 1: Conejo-1 comió Planta-7 y ganó 30.0 de energía.
-Turno 1: Conejo-1 recibió efecto de clima sobre energía: 5.
-Turno 1: Conejo-2 comió Planta-1 y ganó 40.0 de energía.
-Turno 1: Conejo-2 recibió efecto de clima sobre energía: 5.
-Turno 1: Conejo-1 se reprodujo. Nació Conejo-3.
-Turno 1: Lobo-1 cazó a Conejo-1. Cacerías: 1.
+Turno 1: Las plantas no se reproducen por el invierno.
+Turno 1: Conejo-1 comió Planta-14 y ganó 20.0 de energía.
+Turno 1: Conejo-1 recibió efecto de clima sobre energía: -8.
+Turno 1: Conejo-2 comió Planta-15 y ganó 20.0 de energía.
+Turno 1: Conejo-2 recibió efecto de clima sobre energía: -8.
+Turno 1: Conejo-3 comió Planta-3 y ganó 10.0 de energía.
+Turno 1: Conejo-3 recibió efecto de clima sobre energía: -8.
+Turno 1: Conejo-4 comió Planta-1 y ganó 50.0 de energía.
+Turno 1: Conejo-4 recibió efecto de clima sobre energía: -8.
+Turno 1: Conejo-5 comió Planta-4 y ganó 50.0 de energía.
+Turno 1: Conejo-5 recibió efecto de clima sobre energía: -8.
+Turno 1: Conejo-1 se reprodujo. Nació Conejo-6.
+Turno 1: Conejo-2 se reprodujo. Nació Conejo-7.
+Turno 1: Lobo-1 falló la caza y perdió 10 de energía.
 Turno 2: === Turno 2 ===
-Turno 2: Planta-2 se reprodujo. Nació Planta-10.
-Turno 2: Planta-3 se reprodujo. Nació Planta-11.
-Turno 2: Planta-8 se reprodujo. Nació Planta-12.
-Turno 2: Conejo-2 comió Planta-12 y ganó 20.0 de energía.
-Turno 2: Conejo-2 recibió efecto de clima sobre energía: 5.
-Turno 2: Conejo-3 comió Planta-4 y ganó 40.0 de energía.
-Turno 2: Conejo-3 recibió efecto de clima sobre energía: 5.
-Turno 2: Lobo-1 cazó a Conejo-3. Cacerías: 2.
+Turno 2: Las plantas no se reproducen por el invierno.
+Turno 2: Conejo-1 comió Planta-16 y ganó 40.0 de energía.
+Turno 2: Conejo-1 recibió efecto de clima sobre energía: -8.
+Turno 2: Conejo-2 comió Planta-8 y ganó 10.0 de energía.
+Turno 2: Conejo-2 recibió efecto de clima sobre energía: -8.
+Turno 2: Conejo-3 comió Planta-23 y ganó 40.0 de energía.
+Turno 2: Conejo-3 recibió efecto de clima sobre energía: -8.
+Turno 2: Conejo-4 comió Planta-2 y ganó 10.0 de energía.
+Turno 2: Conejo-4 recibió efecto de clima sobre energía: -8.
+Turno 2: Conejo-5 comió Planta-21 y ganó 20.0 de energía.
+Turno 2: Conejo-5 recibió efecto de clima sobre energía: -8.
+Turno 2: Conejo-6 comió Planta-18 y ganó 30.0 de energía.
+Turno 2: Conejo-6 recibió efecto de clima sobre energía: -8.
+Turno 2: Conejo-7 comió Planta-13 y ganó 20.0 de energía.
+Turno 2: Conejo-7 recibió efecto de clima sobre energía: -8.
+Turno 2: Conejo-1 se reprodujo. Nació Conejo-8.
+Turno 2: Conejo-3 se reprodujo. Nació Conejo-9.
+Turno 2: Conejo-4 se reprodujo. Nació Conejo-10.
+Turno 2: Conejo-7 se reprodujo. Nació Conejo-11.
+Turno 2: Lobo-1 cazó a Conejo-8. Cacerías: 1.
 Turno 3: === Turno 3 ===
-Turno 3: Planta-6 se reprodujo. Nació Planta-13.
-Turno 3: Planta-9 se reprodujo. Nació Planta-14.
-Turno 3: Planta-10 se reprodujo. Nació Planta-15.
-Turno 3: Planta-11 se reprodujo. Nació Planta-16.
-Turno 3: Conejo-2 comió Planta-8 y ganó 50.0 de energía.
-Turno 3: Conejo-2 recibió efecto de clima sobre energía: 5.
-Turno 3: Lobo-1 falló la caza y perdió 10 de energía.
-Turno 3: El clima cambió a Lluvioso.
+Turno 3: Las plantas no se reproducen por el invierno.
+Turno 3: Conejo-1 comió Planta-9 y ganó 50.0 de energía.
+Turno 3: Conejo-1 recibió efecto de clima sobre energía: -8.
+Turno 3: Conejo-2 comió Planta-19 y ganó 30.0 de energía.
+Turno 3: Conejo-2 recibió efecto de clima sobre energía: -8.
+Turno 3: Conejo-3 comió Planta-10 y ganó 20.0 de energía.
+Turno 3: Conejo-3 recibió efecto de clima sobre energía: -8.
+Turno 3: Conejo-4 comió Planta-7 y ganó 20.0 de energía.
+Turno 3: Conejo-4 recibió efecto de clima sobre energía: -8.
+Turno 3: Conejo-5 comió Planta-26 y ganó 40.0 de energía.
+Turno 3: Conejo-5 recibió efecto de clima sobre energía: -8.
+Turno 3: Conejo-6 comió Planta-22 y ganó 30.0 de energía.
+Turno 3: Conejo-6 recibió efecto de clima sobre energía: -8.
+Turno 3: Conejo-7 comió Planta-24 y ganó 40.0 de energía.
+Turno 3: Conejo-7 recibió efecto de clima sobre energía: -8.
+Turno 3: Conejo-9 comió Planta-30 y ganó 40.0 de energía.
+Turno 3: Conejo-9 recibió efecto de clima sobre energía: -8.
+Turno 3: Conejo-10 comió Planta-20 y ganó 30.0 de energía.
+Turno 3: Conejo-10 recibió efecto de clima sobre energía: -8.
+Turno 3: Conejo-11 comió Planta-28 y ganó 30.0 de energía.
+Turno 3: Conejo-11 recibió efecto de clima sobre energía: -8.
+Turno 3: Conejo-2 se reprodujo. Nació Conejo-12.
+Turno 3: Conejo-3 se reprodujo. Nació Conejo-13.
+Turno 3: Lobo-1 cazó a Conejo-12. Cacerías: 2.
+Turno 3: Se agregó Planta-31 al ecosistema.
 Turno 4: === Turno 4 ===
-Turno 4: Planta-6 se reprodujo. Nació Planta-17.
-Turno 4: Planta-13 se reprodujo. Nació Planta-18.
-Turno 4: Planta-14 se reprodujo. Nació Planta-19.
-Turno 4: Planta-15 se reprodujo. Nació Planta-20.
-Turno 4: Planta-16 se reprodujo. Nació Planta-21.
-Turno 4: Conejo-2 comió Planta-10 y ganó 30.0 de energía.
-Turno 4: Conejo-2 recibió efecto de clima sobre energía: 3.
-Turno 4: Lobo-1 cazó a Conejo-2. Cacerías: 3.
-Turno 4: Lobo-1 recibió efecto de clima sobre energía: -5.
-Turno 4: Colapso del ecosistema: se extinguieron los conejos.
+Turno 4: Las plantas no se reproducen por el invierno.
+Turno 4: Conejo-1 comió Planta-17 y ganó 50.0 de energía.
+Turno 4: Conejo-1 recibió efecto de clima sobre energía: -8.
+Turno 4: Conejo-2 comió Planta-29 y ganó 50.0 de energía.
+Turno 4: Conejo-2 recibió efecto de clima sobre energía: -8.
+Turno 4: Conejo-3 comió Planta-6 y ganó 20.0 de energía.
+Turno 4: Conejo-3 recibió efecto de clima sobre energía: -8.
+Turno 4: Conejo-4 comió Planta-25 y ganó 10.0 de energía.
+Turno 4: Conejo-4 recibió efecto de clima sobre energía: -8.
+Turno 4: Conejo-5 comió Planta-12 y ganó 50.0 de energía.
+Turno 4: Conejo-5 recibió efecto de clima sobre energía: -8.
+Turno 4: Conejo-6 comió Planta-31 y ganó 10.0 de energía.
+Turno 4: Conejo-6 recibió efecto de clima sobre energía: -8.
+Turno 4: Conejo-7 comió Planta-5 y ganó 10.0 de energía.
+Turno 4: Conejo-7 recibió efecto de clima sobre energía: -8.
+Turno 4: Conejo-9 comió Planta-27 y ganó 40.0 de energía.
+Turno 4: Conejo-9 recibió efecto de clima sobre energía: -8.
+Turno 4: Conejo-10 comió Planta-11 y ganó 20.0 de energía.
+Turno 4: Conejo-10 recibió efecto de clima sobre energía: -8.
+Turno 4: Conejo-11 no encontró plantas y perdió 15 de energía.
+Turno 4: Conejo-11 recibió efecto de clima sobre energía: -8.
+Turno 4: Conejo-13 no encontró plantas y perdió 15 de energía.
+Turno 4: Conejo-13 recibió efecto de clima sobre energía: -8.
+Turno 4: Conejo-1 se reprodujo. Nació Conejo-14.
+Turno 4: Conejo-3 se reprodujo. Nació Conejo-15.
+Turno 4: Conejo-10 se reprodujo. Nació Conejo-16.
+Turno 4: Lobo-1 falló la caza y perdió 10 de energía.
+Turno 4: Colapso del ecosistema: se extinguieron las plantas.
 [HISTORIAL_PLANTAS]
-5,7,8,11,15
+30,25,18,8,0
 [HISTORIAL_CONEJOS]
-2,2,1,1,0
+5,7,10,11,14
 [HISTORIAL_LOBOS]
 1,1,1,1,1

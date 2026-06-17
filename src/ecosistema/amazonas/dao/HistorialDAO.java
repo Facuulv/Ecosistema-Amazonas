@@ -16,6 +16,7 @@ public class HistorialDAO {
     private static final String CARPETA_DATA = "data";
     private static final String ARCHIVO_HISTORIAL = "data/historial_partidas.txt";
 
+    // guarda el historial en un .txt
     public void guardarResumenPartida(String resumen) throws IOException {
         if (resumen == null || resumen.trim().isEmpty()) {
             throw new IOException("No hay resumen para guardar.");

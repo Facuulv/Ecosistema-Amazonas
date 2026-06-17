@@ -21,6 +21,7 @@ public class EcosistemaDAO {
     private static final String CARPETA_DATA = "data";
     private static final String ARCHIVO_GUARDADO = "data/simulacion_guardada.txt";
 
+    // guarda la simulacion en .txt
     public void guardar(Ecosistema ecosistema) throws IOException {
         if (ecosistema == null) {
             throw new IOException("No hay simulación para guardar.");

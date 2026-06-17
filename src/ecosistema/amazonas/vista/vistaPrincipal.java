@@ -1114,7 +1114,8 @@ public class vistaPrincipal extends javax.swing.JFrame {
 
         listaEventos.setModel(modeloLista);
     }
-
+    
+    // actualiza la pantalla principal cada vez que genera cambios
     public void actualizarVistaJuego() {
         if (controlador == null) {
             return;
