@@ -1,5 +1,6 @@
 package ecosistema.amazonas.modelo;
 
+// Clase Lobo 
 public class Lobo extends Animal {
 
     private int exitosCaza;

@@ -86,6 +86,7 @@ public class ControladorEcosistema {
         return null;
     }
 
+    // Metodo para Cargar Plantas 
     private void crearPlantasIniciales(int cantidad) {
         for (int i = 1; i <= cantidad; i++) {
             Planta planta = crearPlanta("Planta-" + i);
@@ -137,6 +138,7 @@ public class ControladorEcosistema {
         return new Planta(nombre, edad, energia, viva, fila, columna, tamanio);
     }
 
+    // Metodo Para Cargar Conejos 
     private Conejo crearConejo(String nombre) {
         return crearConejo(nombre, null);
     }
@@ -394,7 +396,8 @@ public class ControladorEcosistema {
             }
         }
     }
-
+    
+    //Metodo de Cambio de cambio de clima , el clima si es vacio devuelve un mensaje de error 
     public String cambiarClima(Clima nuevoClima) {
         if (ecosistema == null) {
             return "No hay simulación en curso.";
